@@ -41,3 +41,111 @@
     font-size:1.2rem;
 
 }
+
+/*=========================================
+WORLD CARD
+==========================================*/
+
+.world-gallery{
+
+    width:min(1200px,90%);
+
+    margin:100px auto;
+
+}
+
+.world-card{
+
+    display:grid;
+
+    grid-template-columns:480px 1fr;
+
+    gap:100px;
+
+    align-items:center;
+
+}
+
+.world-cover img{
+
+    width:100%;
+
+    border-radius:10px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+    transition:.4s;
+
+}
+
+.world-cover img:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.world-number{
+
+    color:#C8A96A;
+
+    letter-spacing:5px;
+
+    font-size:.85rem;
+
+}
+
+.world-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4rem;
+
+    margin:20px 0;
+
+}
+
+.genre{
+
+    color:#999;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    margin-bottom:35px;
+
+}
+
+blockquote{
+
+    font-size:1.4rem;
+
+    line-height:1.8;
+
+    color:#DDD;
+
+    border-left:2px solid #C8A96A;
+
+    padding-left:30px;
+
+    margin-bottom:50px;
+
+}
+
+.world-button{
+
+    color:#C8A96A;
+
+    text-decoration:none;
+
+    border-bottom:1px solid transparent;
+
+    transition:.3s;
+
+}
+
+.world-button:hover{
+
+    border-color:#C8A96A;
+
+}
