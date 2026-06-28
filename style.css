@@ -1,0 +1,100 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#0B0B0B;
+    color:#F5F5F5;
+
+    font-family:'Inter',sans-serif;
+}
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.hero-content{
+
+    max-width:900px;
+
+}
+
+.hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:5rem;
+
+    letter-spacing:4px;
+
+    margin-bottom:20px;
+
+}
+
+.roles{
+
+    color:#C8A96A;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:40px;
+
+}
+
+.tagline{
+
+    font-size:1.5rem;
+
+    color:#B5B5B5;
+
+    line-height:1.8;
+
+    margin-bottom:50px;
+
+}
+
+.button{
+
+    display:inline-block;
+
+    padding:18px 40px;
+
+    border:1px solid #C8A96A;
+
+    color:#C8A96A;
+
+    text-decoration:none;
+
+    transition:.4s;
+
+}
+
+.button:hover{
+
+    background:#C8A96A;
+
+    color:#0B0B0B;
+
+}
