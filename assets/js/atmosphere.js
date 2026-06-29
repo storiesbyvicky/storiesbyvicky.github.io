@@ -11,6 +11,17 @@ if (!canvas) return;
 
 const ctx = canvas.getContext("2d");
 
+/* Force the canvas to behave like a background */
+
+canvas.style.position = "fixed";
+canvas.style.inset = "0";
+canvas.style.width = "100%";
+canvas.style.height = "100%";
+canvas.style.pointerEvents = "none";
+canvas.style.zIndex = "-1";
+
+canvas.setAttribute("aria-hidden", "true");
+canvas.style.display = "block";
 /*=========================================================
     ENGINE
 =========================================================*/
@@ -42,8 +53,8 @@ function resizeCanvas(){
     canvas.width = Engine.width * dpr;
     canvas.height = Engine.height * dpr;
 
-    canvas.style.width = Engine.width + "px";
-    canvas.style.height = Engine.height + "px";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
 
     ctx.setTransform(dpr,0,0,dpr,0,0);
 
