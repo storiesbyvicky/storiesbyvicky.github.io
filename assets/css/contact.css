@@ -150,3 +150,141 @@ THE STORYTELLER
     margin-bottom:30px;
 
 }
+
+/*=========================================
+CONNECT LINKS
+==========================================*/
+
+.connect-links{
+
+    max-width:1000px;
+
+    margin:180px auto;
+
+    padding:0 20px;
+
+    text-align:center;
+
+}
+
+.connect-links h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4rem;
+
+    margin:30px 0 90px;
+
+}
+
+.links-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.contact-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:38px 10px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.contact-row h3{
+
+    font-size:1.45rem;
+
+    margin-bottom:10px;
+
+}
+
+.contact-row span{
+
+    color:#A5A5A5;
+
+}
+
+.arrow{
+
+    font-size:2rem;
+
+    color:#C8A96A;
+
+    transition:.35s;
+
+}
+
+.contact-row:hover{
+
+    padding-left:20px;
+
+    border-color:#C8A96A;
+
+}
+
+.contact-row:hover .arrow{
+
+    transform:translateX(10px);
+
+}
+
+/*=========================================
+FINAL MESSAGE
+==========================================*/
+
+.final-message{
+
+    padding:240px 20px 180px;
+
+    text-align:center;
+
+}
+
+.final-message-content{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.final-message h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4.8rem;
+
+    line-height:1.25;
+
+    margin:40px 0 60px;
+
+}
+
+.final-text{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#A5A5A5;
+
+    font-size:1.2rem;
+
+    line-height:2;
+
+}
