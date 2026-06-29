@@ -1,0 +1,127 @@
+/*=========================================
+CONNECT HERO
+==========================================*/
+
+.connect-hero{
+
+    min-height: calc(100vh - 90px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 40px 60px;
+
+    box-sizing:border-box;
+
+}
+
+.connect-hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:5.3rem;
+
+    line-height:1.1;
+
+    margin:20px 0 35px;
+
+}
+
+.connect-subtitle{
+
+    max-width:720px;
+
+    font-size:1.35rem;
+
+    line-height:2;
+
+    color:#A5A5A5;
+
+}
+
+/*=========================================
+THE STORYTELLER
+==========================================*/
+
+.storyteller{
+
+    padding:180px 20px;
+
+}
+
+.storyteller-grid{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:420px 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.portrait-placeholder{
+
+    width:100%;
+
+    aspect-ratio:4/5;
+
+    border:1px solid rgba(200,169,106,.2);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#666;
+
+    font-style:italic;
+
+    transition:.4s;
+
+}
+
+.portrait-placeholder:hover{
+
+    border-color:#C8A96A;
+
+    transform:translateY(-6px);
+
+}
+
+.story-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4rem;
+
+    line-height:1.15;
+
+    margin:30px 0 50px;
+
+}
+
+.story-content p{
+
+    font-size:1.2rem;
+
+    color:#A5A5A5;
+
+    line-height:2;
+
+    margin-bottom:30px;
+
+}

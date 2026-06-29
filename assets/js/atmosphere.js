@@ -356,7 +356,7 @@ class DustParticle{
         this.x = random(0,Engine.width);
         this.y = random(0,Engine.height);
 
-        this.radius = random(0.4,1.6);
+        this.radius = random(0.2,0.8);
 
         this.alpha = random(0.03,0.12);
 
@@ -431,13 +431,13 @@ class Fiber{
         this.x=random(0,Engine.width);
         this.y=random(0,Engine.height);
 
-        this.length=random(3,8);
+        this.length = random(5,12);
 
         this.rotation=random(0,Math.PI*2);
 
         this.rotationSpeed=random(-0.0008,0.0008);
 
-        this.alpha=random(.03,.09);
+        this.alpha = random(.015,.05);
 
         this.vx=random(-0.03,0.03);
         this.vy=random(-0.03,0.03);
@@ -576,7 +576,7 @@ class CreatorLayer extends Layer{
 
         this.items=[];
 
-        for(let i=0;i<120;i++){
+        for(let i=0;i<260;i++){
 
             this.items.push(
                 new DustParticle()
@@ -584,7 +584,7 @@ class CreatorLayer extends Layer{
 
         }
 
-        for(let i=0;i<70;i++){
+        for(let i=0;i<140;i++){
 
             this.items.push(
                 new Fiber()
@@ -592,7 +592,7 @@ class CreatorLayer extends Layer{
 
         }
 
-        for(let i=0;i<8;i++){
+        for(let i=0;i<2;i++){
 
             this.items.push(
                 new DepthDust()
