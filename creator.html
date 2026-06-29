@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/creator.css">
+    <link rel="stylesheet" href="assets/css/background.css">
 </head>
 
 <header>
@@ -291,14 +292,21 @@ Stories by Vicky
 </div>
 
 </section>
-<section class="creator-ending" id="final-scene"></section>
 </main>
 
-<script src="assets/js/script.js"></script>
-<script src="assets/js/final-scene.js"></script>
+<canvas id="atmosphere"></canvas>
 
-</body>
+<script src="assets/js/script.js"></script>
+<!-- <script src="assets/js/final-scene.js"></script> -->
+
+<script src="assets/js/atmosphere.js"></script>
+
+<script>
+createAtmosphere("creator");
+</script>
 
 <footer>
     Footer
 </footer>
+
+</body>
