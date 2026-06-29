@@ -1,6 +1,8 @@
 .worlds-hero{
 
-    min-height:70vh;
+    padding-top:180px;
+
+    padding-bottom:120px;
 
     display:flex;
 
@@ -80,7 +82,7 @@ WORLD CARD
 
 .world-cover img:hover{
 
-    transform:translateY(-12px);
+    transform:translateY(-8px) scale(1.02);
 
 }
 
@@ -147,5 +149,125 @@ blockquote{
 .world-button:hover{
 
     border-color:#C8A96A;
+
+}
+
+.reverse{
+
+    grid-template-columns:1fr 480px;
+
+}
+
+.reverse .world-content{
+
+    order:1;
+
+}
+
+.reverse .world-cover{
+
+    order:2;
+
+}
+
+.world-label{
+
+    color:#C8A96A;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+}
+
+.divider{
+
+    width:80px;
+
+    height:2px;
+
+    background:#C8A96A;
+
+    margin:40px 0 50px;
+
+}
+
+.world-quote{
+
+    font-size:1.5rem;
+
+    max-width:600px;
+
+    font-style:italic;
+
+    line-height:1.8;
+
+    color:#DDD;
+
+    margin-bottom:50px;
+
+}
+
+.world-intro{
+
+    font-size:1.25rem;
+
+    font-weight:500;
+
+    color:#D8B16A;
+
+}
+
+/*=========================================
+CLOSING MESSAGE
+==========================================*/
+
+.closing-message{
+
+    padding:220px 20px 180px;
+
+    text-align:center;
+
+}
+
+.closing-content{
+
+    max-width:750px;
+
+    margin:auto;
+
+}
+
+.closing-label{
+
+    color:#C8A96A;
+
+    letter-spacing:6px;
+
+    font-size:.85rem;
+
+    margin-bottom:30px;
+
+}
+
+.closing-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4rem;
+
+    margin-bottom:35px;
+
+}
+
+.closing-text{
+
+    color:#9A9A9A;
+
+    font-size:1.25rem;
+
+    line-height:2;
 
 }

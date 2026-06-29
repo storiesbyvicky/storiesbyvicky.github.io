@@ -1,0 +1,501 @@
+/*=========================================
+CREATOR HERO
+==========================================*/
+
+.creator-hero{
+
+    min-height:80vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.creator-label{
+
+    color:#C8A96A;
+
+    letter-spacing:8px;
+
+    font-size:.9rem;
+
+    margin-bottom:35px;
+
+}
+
+.creator-hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:5.5rem;
+
+    line-height:1.1;
+
+    margin-bottom:40px;
+
+}
+
+.creator-subtitle{
+
+    max-width:650px;
+
+    font-size:1.4rem;
+
+    color:#9A9A9A;
+
+    line-height:1.8;
+
+}
+
+.scroll-arrow{
+
+    margin-top:120px;
+
+    color:#C8A96A;
+
+    font-size:2.5rem;
+
+    animation:float 2s infinite;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================
+FIRST QUESTION
+==========================================*/
+
+.first-question{
+
+    padding:220px 20px;
+
+}
+
+.question-container{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.section-label{
+
+    color:#C8A96A;
+
+    letter-spacing:8px;
+
+    font-size:.9rem;
+
+}
+
+.first-question h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4.8rem;
+
+    margin:35px 0 50px;
+
+}
+
+.first-question p{
+
+    color:#A5A5A5;
+
+    font-size:1.35rem;
+
+    line-height:2;
+
+    margin-bottom:35px;
+
+}
+
+/*=========================================
+CREATIVE PHILOSOPHY
+==========================================*/
+
+.philosophy{
+
+    padding:220px 20px;
+
+}
+
+.philosophy-content{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.philosophy blockquote{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:3.8rem;
+
+    line-height:1.3;
+
+    color:#F5F5F5;
+
+    margin:60px 0;
+
+}
+
+.philosophy p{
+
+    font-size:1.3rem;
+
+    color:#9A9A9A;
+
+    line-height:2;
+
+}
+
+.creator-worlds{
+
+    padding:220px 20px;
+
+    text-align:center;
+
+}
+
+.creator-worlds h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4rem;
+
+    margin:40px 0 80px;
+
+}
+
+.world-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+    max-width:1000px;
+
+    margin:auto;
+
+}
+
+.world-item{
+
+    border:1px solid rgba(200,169,106,.2);
+
+    padding:60px;
+
+    transition:.3s;
+
+}
+
+.world-item:hover{
+
+    border-color:#C8A96A;
+
+    transform:translateY(-8px);
+
+}
+
+.world-item h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+}
+
+.world-item p{
+
+    color:#9A9A9A;
+
+}
+
+/*=========================================
+THE ROAD AHEAD
+==========================================*/
+
+.future{
+
+    padding:220px 20px;
+
+}
+
+.future-content{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.future h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4.5rem;
+
+    line-height:1.2;
+
+    margin:40px 0;
+
+}
+
+.future p{
+
+    font-size:1.3rem;
+
+    line-height:2;
+
+    color:#9A9A9A;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+/*=========================================
+CREATOR ENDING
+==========================================*/
+
+.creator-ending{
+
+    padding:260px 20px 220px;
+
+    text-align:center;
+
+}
+
+.creator-ending h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:5rem;
+
+    line-height:1.2;
+
+    margin-bottom:40px;
+
+}
+
+.creator-ending p{
+
+    color:#C8A96A;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:1rem;
+
+}
+
+.creator-name{
+
+    color:#C8A96A;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    font-size:1rem;
+
+    margin-top:50px;
+
+}
+
+.ending-line{
+
+    width:90px;
+
+    height:1px;
+
+    background:rgba(200,169,106,.45);
+
+    margin:40px auto;
+
+}
+
+.creator-signature{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.7rem;
+
+    color:rgba(245,245,245,.75);
+
+    line-height:1.8;
+
+}
+
+/*=========================================
+FALLING LETTERS
+==========================================*/
+
+.falling-text{
+
+    margin-top:80px;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    max-width:700px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+.falling-text span{
+
+    display:inline-block;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
+
+    color:#D9B56A;
+
+    opacity:0;
+
+    transform:translateY(-450px);
+
+    position:relative;
+
+    will-change:transform;
+
+}
+
+@keyframes fallLetter{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(-450px);
+
+    }
+
+    55%{
+
+        opacity:1;
+
+    }
+
+    82%{
+
+        transform:translateY(18px);
+
+    }
+
+    92%{
+
+        transform:translateY(-7px);
+
+    }
+
+    97%{
+
+        transform:translateY(3px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.particle{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    border-radius:50%;
+
+    background:#D9B56A;
+
+    pointer-events:none;
+
+    will-change:transform,opacity;
+
+}
+
+@keyframes particle{
+
+    0%{
+
+        opacity:1;
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(var(--x),var(--y))
+            scale(0);
+
+    }
+
+}
