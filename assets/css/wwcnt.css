@@ -1,0 +1,290 @@
+/* =========================================
+   SCENE 1 — ARRIVAL
+========================================= */
+
+.arrival-scene{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:140px 30px 100px;
+
+}
+
+.arrival-content{
+
+    max-width:900px;
+
+}
+
+.arrival-time{
+
+    color:#C8A96A;
+
+    letter-spacing:8px;
+
+    font-size:.9rem;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+.arrival-subtitle{
+
+    color:#9FA8B5;
+
+    font-size:1.1rem;
+
+    margin-bottom:60px;
+
+}
+
+.arrival-stars{
+
+    font-size:1.4rem;
+
+    color:white;
+
+    opacity:.75;
+
+    margin-bottom:50px;
+
+}
+
+.arrival-scene h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:7rem;
+
+    line-height:.95;
+
+    font-weight:500;
+
+    color:white;
+
+    margin:0;
+
+}
+
+.arrival-quote{
+
+    margin:70px auto;
+
+    max-width:620px;
+
+    font-size:1.35rem;
+
+    line-height:2;
+
+    color:#B8C6D9;
+
+}
+
+.arrival-button{
+
+    display:inline-block;
+
+    padding:18px 48px;
+
+    border:1px solid rgba(200,169,106,.45);
+
+    color:#C8A96A;
+
+    text-decoration:none;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    transition:.35s;
+
+}
+
+.arrival-button:hover{
+
+    background:#C8A96A;
+
+    color:#111;
+
+}
+
+/*=========================================
+SCENE 2 — THE QUESTION
+==========================================*/
+
+.scene-two{
+
+    padding:220px 30px;
+
+    text-align:center;
+
+}
+
+.scene-two-content{
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+.scene-label{
+
+    color:#C8A96A;
+
+    letter-spacing:8px;
+
+    font-size:.75rem;
+
+    opacity:.8;
+
+}
+
+.scene-two h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:5rem;
+
+    line-height:.9;
+
+    margin-bottom:50px;
+
+}
+
+.hours{
+
+    display:block;
+
+    font-size:11rem;
+
+    line-height:.8;
+
+    margin:20px 0;
+
+    color:#ffffff;
+
+}
+
+.story-block{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+    margin:60px 0 100px;   
+
+}
+
+.story-block p{
+
+    font-size:1.35rem;
+
+    color:#C5CEDA;
+
+    line-height:2;
+
+}
+
+.line-gateway{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:28px;
+
+    margin-top:20px;
+
+}
+
+.gateway-text{
+
+    color:#C8A96A;
+
+    letter-spacing:2px;
+
+    font-size:.9rem;
+
+    opacity:.85;
+
+}
+
+.line-button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    margin-top:80px;
+
+}
+
+.line-left,
+.line-right{
+
+    width:220px;
+
+    height:1px;
+
+    background:#4D84D8;
+
+    transition:.8s;
+
+}
+
+.line-title{
+
+    color:#C8A96A;
+
+    letter-spacing:8px;
+
+    font-size:1rem;
+
+}
+
+.line-button:hover .line-left{
+
+    transform:translateX(-8px);
+
+    background:#8EC8FF;
+
+}
+
+.line-button:hover .line-right{
+
+    transform:translateX(8px);
+
+    background:#8EC8FF;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
