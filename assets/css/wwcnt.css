@@ -124,9 +124,15 @@ SCENE 2 — THE QUESTION
 
 .scene-two{
 
-    padding:220px 30px;
+    padding:220px 30px 60px;
 
     text-align:center;
+
+}
+
+main{
+
+    min-height:100vh;
 
 }
 
@@ -234,26 +240,108 @@ SCENE 2 — THE QUESTION
 
     gap:25px;
 
+    width:100%;
+
+    max-width:700px;
+
+    margin:auto;
+
     background:none;
 
     border:none;
 
     cursor:pointer;
 
-    margin-top:80px;
+}
+
+.left{
+
+    text-align:left;
 
 }
+
+.center{
+
+    text-align:center;
+
+}
+
+.right{
+
+    text-align:right;
+
+}
+
+/*====================================
+THE LINE - OPENING
+====================================*/
 
 .line-left,
 .line-right{
 
-    width:220px;
+    flex:1;
 
-    height:1px;
+    height:2px;
 
-    background:#4D84D8;
+    background:#5FA8FF;
 
-    transition:.8s;
+    transition:1.2s ease;
+
+    transform-origin:center;
+
+}
+
+.line-button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    width:100%;
+
+    max-width:750px;
+
+    margin:auto;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+/* Hover */
+
+.line-button:hover .line-left{
+
+    transform:translateX(-12px);
+
+}
+
+.line-button:hover .line-right{
+
+    transform:translateX(12px);
+
+}
+
+/* Portal Opening */
+
+body.crossing .line-left{
+
+    transform:translateX(-220px);
+
+    opacity:0;
+
+}
+
+body.crossing .line-right{
+
+    transform:translateX(220px);
+
+    opacity:0;
 
 }
 
@@ -261,30 +349,425 @@ SCENE 2 — THE QUESTION
 
     color:#C8A96A;
 
-    letter-spacing:8px;
-
     font-size:1rem;
 
-}
+    letter-spacing:8px;
 
-.line-button:hover .line-left{
+    text-transform:uppercase;
 
-    transform:translateX(-8px);
+    font-weight:500;
 
-    background:#8EC8FF;
+    transition:opacity .6s ease;
 
-}
-
-.line-button:hover .line-right{
-
-    transform:translateX(8px);
-
-    background:#8EC8FF;
+    white-space:nowrap;
 
 }
 
 .hidden{
 
     display:none;
+
+}
+
+/*=========================================
+UNIVERSE LAYER
+==========================================*/
+
+.universe{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100vh;
+
+    background:#04070D;
+
+    z-index:9998;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    overflow-y:auto;
+
+    transition:
+
+        opacity 2s ease,
+
+        visibility 2s ease;
+
+}
+
+.universe.open{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/*=========================================
+UNIVERSE INTRO
+==========================================*/
+
+.universe-intro{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 40px;
+
+}
+
+.universe-label{
+
+    color:#C8A96A;
+
+    letter-spacing:8px;
+
+    font-size:.85rem;
+
+    margin-bottom:40px;
+
+}
+
+.universe-intro h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4.8rem;
+
+    line-height:1.2;
+
+    max-width:900px;
+
+    color:#ffffff;
+
+}
+
+/*=========================================
+THE LINE
+==========================================*/
+
+.line-law{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 40px;
+
+}
+
+.cosmic-line{
+
+    width:420px;
+
+    height:2px;
+
+    background:linear-gradient(
+
+        to right,
+
+        transparent,
+
+        #7FB7FF,
+
+        #ffffff,
+
+        #7FB7FF,
+
+        transparent
+
+    );
+
+    margin:60px 0;
+
+    box-shadow:
+
+        0 0 18px #7FB7FF,
+
+        0 0 45px rgba(127,183,255,.7);
+
+}
+
+.line-description{
+
+    max-width:700px;
+
+    line-height:2.2;
+
+    font-size:1.2rem;
+
+    color:#C8D1DF;
+
+}
+
+/*=========================================
+PORTAL OVERLAY
+==========================================*/
+
+.portal-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    z-index:9999;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(40,80,150,.18),
+
+            rgba(4,7,13,.85)
+
+        );
+
+    transition:opacity 1.5s ease;
+
+}
+
+.portal-core{
+
+    width:6px;
+
+    height:0;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        to bottom,
+        #ffffff,
+        #7BB8FF,
+        #3F7BFF,
+        #7BB8FF,
+        #ffffff
+    );
+
+    box-shadow:
+
+        0 0 30px #7BB8FF,
+        0 0 70px #4A90FF,
+        0 0 140px rgba(74,144,255,.8);
+
+    transition:
+
+        height 1.2s ease,
+        width .8s ease,
+        transform 1.2s ease;
+
+}
+
+.portal-core::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+
+        ellipse,
+
+        rgba(180,220,255,.9),
+
+        rgba(120,180,255,.5),
+
+        transparent 70%
+
+    );
+
+    filter:blur(40px);
+
+}
+
+/*=========================
+ACTIVE STATE
+=========================*/
+
+body.crossing .portal-overlay{
+
+    opacity:1;
+
+    background:rgba(2,8,25,.55);
+
+}
+
+body.crossing .portal-core{
+
+    height:120vh;
+
+    width:100vw;
+
+    border-radius:0;
+
+    animation:portalExpand 2.8s ease forwards;
+
+}
+
+body.crossing{
+
+    overflow:hidden;
+
+}
+
+@keyframes portalPulse{
+
+    0%{
+
+        transform:scaleY(.85);
+
+        opacity:.8;
+
+    }
+
+    50%{
+
+        transform:scaleY(1.08);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scaleY(.9);
+
+        opacity:.85;
+
+    }
+
+}
+
+@keyframes portalExpand{
+
+    0%{
+
+        width:12px;
+
+        opacity:1;
+
+    }
+
+    35%{
+
+        width:120px;
+
+    }
+
+    70%{
+
+        width:45vw;
+
+    }
+
+    100%{
+
+        width:100vw;
+
+        opacity:1;
+
+    }
+
+}
+
+body.crossing .portal-core{
+
+    height:110vh;
+
+    width:14px;
+
+    animation:portalPulse 1.4s ease-in-out infinite;
+
+}
+
+body.crossing header,
+
+body.crossing .scene-two,
+
+body.crossing .arrival-scene{
+
+    opacity:.15;
+
+    transition:opacity 1.2s ease;
+
+}
+
+body.crossing header,
+
+body.crossing main{
+
+    opacity:0;
+
+    transition:opacity 2s ease;
+
+}
+
+.rule-content{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:ruleReveal 2s ease forwards;
+
+    animation-delay:3s;
+
+}
+
+@keyframes ruleReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
 
 }
