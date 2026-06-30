@@ -708,30 +708,7 @@ body.crossing{
 
 }
 
-body.crossing .portal-core{
-
-    height:110vh;
-
-    width:14px;
-
-    animation:portalPulse 1.4s ease-in-out infinite;
-
-}
-
 body.crossing header,
-
-body.crossing .scene-two,
-
-body.crossing .arrival-scene{
-
-    opacity:.15;
-
-    transition:opacity 1.2s ease;
-
-}
-
-body.crossing header,
-
 body.crossing main{
 
     opacity:0;
@@ -742,13 +719,9 @@ body.crossing main{
 
 .rule-content{
 
-    opacity:0;
+    opacity:1;
 
-    transform:translateY(40px);
-
-    animation:ruleReveal 2s ease forwards;
-
-    animation-delay:3s;
+    transform:none;
 
 }
 

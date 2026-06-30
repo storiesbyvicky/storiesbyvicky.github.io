@@ -9,6 +9,12 @@ button.addEventListener("click", () => {
 
         universe.classList.add("open");
 
-    }, 2600);
+    },2200);
+
+    setTimeout(() => {
+
+        document.body.classList.remove("crossing");
+
+    },2600);
 
 });
