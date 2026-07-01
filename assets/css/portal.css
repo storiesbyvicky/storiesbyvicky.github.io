@@ -1,0 +1,149 @@
+/* ==========================================
+   PORTAL ENGINE
+========================================== */
+
+/* Hidden until JavaScript */
+
+#portal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    background:rgba(0,0,0,.15);
+
+    backdrop-filter:blur(0px);
+
+    transition:.8s;
+
+    z-index:9998;
+
+}
+
+/* Portal line */
+
+.portal-line{
+
+    width:4px;
+
+    height:0;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+
+        to bottom,
+
+        white,
+
+        #7BB8FF,
+
+        #3F7BFF,
+
+        white
+
+    );
+
+    box-shadow:
+
+        0 0 25px #5FA8FF,
+
+        0 0 80px #5FA8FF;
+
+}
+
+#universe{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#04070D;
+
+    overflow-y:auto;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    z-index:9997;
+
+    transition:opacity .8s ease;
+
+}
+
+/* Hide scrollbar but keep scrolling */
+
+#universe::-webkit-scrollbar{
+
+    width:0;
+
+}
+
+#universe{
+
+    scrollbar-width:none;
+
+}
+
+/* Rule */
+
+#rule{
+
+    min-height:85vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 0;
+
+}
+
+#rule p{
+
+    max-width:700px;
+
+    margin:40px auto;
+
+}
+
+/* Active States */
+
+body.portal-active #portal{
+
+    opacity:1;
+
+    transition:opacity .8s ease;
+
+}
+
+body.portal-active .portal-line{
+
+    height:100vh;
+
+    transition:1s;
+
+}
+
+#universe.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}

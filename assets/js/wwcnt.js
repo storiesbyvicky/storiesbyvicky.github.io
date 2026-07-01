@@ -1,20 +1,24 @@
-const button = document.getElementById("openLine");
+const portalButton = document.getElementById("openPortal");
+const body = document.body;
 const universe = document.getElementById("universe");
 
-button.addEventListener("click", () => {
+portalButton.addEventListener("click", () => {
 
-    document.body.classList.add("crossing");
+    // Show portal
+    body.classList.add("portal-active");
 
+    // Show universe
     setTimeout(() => {
 
-        universe.classList.add("open");
+        universe.classList.add("show");
 
-    },2200);
+    },500);
 
+    // Remove portal only
     setTimeout(() => {
 
-        document.body.classList.remove("crossing");
+        body.classList.remove("portal-active");
 
-    },2600);
+    },1800);
 
 });

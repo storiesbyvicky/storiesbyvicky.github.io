@@ -313,3 +313,33 @@ WORKS ENDING
     line-height:2;
 
 }
+
+.project-link{
+
+    display:inline-block;
+
+    margin-top:24px;
+
+    padding:12px 24px;
+
+    border:1px solid rgba(200,169,106,.35);
+
+    color:#C8A96A;
+
+    text-decoration:none;
+
+    letter-spacing:2px;
+
+    transition:.3s ease;
+
+}
+
+.project-link:hover{
+
+    background:#C8A96A;
+
+    color:#111;
+
+    transform:translateY(-3px);
+
+}
