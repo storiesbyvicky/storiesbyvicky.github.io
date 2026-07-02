@@ -147,3 +147,157 @@ body.portal-active .portal-line{
     visibility:visible;
 
 }
+
+/* =====================================================
+MEASURE OF HARM
+===================================================== */
+
+#court-transition{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    z-index:9998;
+
+    transition:opacity .35s ease;
+
+}
+
+#court-transition.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.court-flash{
+
+    position:absolute;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+}
+
+#court-universe{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#0E0E10;
+
+    overflow-y:auto;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    z-index:9999;
+
+    transition:opacity .8s ease;
+
+}
+
+#court-universe.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+#court-universe::-webkit-scrollbar{
+
+    width:0;
+
+}
+
+#court-universe{
+
+    scrollbar-width:none;
+
+}
+
+/* =====================================================
+COURT IMPACT
+===================================================== */
+
+body.court-impact{
+
+    animation:courtImpact .18s linear 2;
+
+}
+
+@keyframes courtImpact{
+
+    0%{
+
+        transform:translate(0);
+
+    }
+
+    25%{
+
+        transform:translate(-2px,2px);
+
+    }
+
+    50%{
+
+        transform:translate(2px,-2px);
+
+    }
+
+    75%{
+
+        transform:translate(-2px,-2px);
+
+    }
+
+    100%{
+
+        transform:translate(0);
+
+    }
+
+}
+
+.court-flash.flash{
+
+    animation:courtFlash .35s forwards;
+
+}
+
+@keyframes courtFlash{
+
+    0%{
+
+        opacity:0;
+
+    }
+
+    25%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
