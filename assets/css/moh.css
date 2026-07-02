@@ -472,7 +472,11 @@ CASE FILES
 
 .case-card{
 
-    padding:50px;
+    max-width:380px;
+
+    margin:auto;
+
+    padding:45px;
 
     border:1px solid rgba(255,255,255,.08);
 
@@ -523,6 +527,74 @@ CASE FILES
 }
 
 /* =====================================================
+CASE STATUS
+===================================================== */
+
+.case-status{
+
+    margin:35px 0;
+
+    padding:22px 0;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.status-label{
+
+    display:block;
+
+    color:#777;
+
+    font-size:.78rem;
+
+    letter-spacing:5px;
+
+    margin-bottom:12px;
+
+}
+
+.status-value{
+
+    font-size:1rem;
+
+    letter-spacing:3px;
+
+    font-weight:600;
+
+}
+
+.status-value.closed{
+
+    color:#C9C9C9;
+
+}
+
+.status-value.restricted{
+
+    color:#C54242;
+
+}
+
+/* =====================================================
+PURCHASE TITLE
+===================================================== */
+
+.purchase-title{
+
+    margin:35px 0 22px;
+
+    color:#777;
+
+    letter-spacing:4px;
+
+    font-size:.78rem;
+
+}
+
+/* =====================================================
 PURCHASE LINKS
 ===================================================== */
 
@@ -553,6 +625,10 @@ PURCHASE LINKS
     letter-spacing:2px;
 
     transition:.35s ease;
+
+    width:140px;
+
+    text-align:center;
 
 }
 
@@ -629,5 +705,69 @@ RESPONSIVE
         justify-content:center;
 
     }
+
+}
+
+/* =====================================================
+SECTION DIVIDER
+===================================================== */
+
+.section-divider{
+
+    width:min(900px,90%);
+
+    margin:80px auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:22px;
+
+}
+
+.divider-line{
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.divider-icon{
+
+    color:#8A8A8A;
+
+    font-size:1.2rem;
+
+     margin:0 12px;
+
+}
+
+/* =====================================================
+CASE REFERENCE
+===================================================== */
+
+.case-ref{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#666;
+
+    font-size:.72rem;
+
+    letter-spacing:3px;
+
+    border-top:1px solid rgba(255,255,255,.05);
+
+    padding-top:18px;
 
 }
