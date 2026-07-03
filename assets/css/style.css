@@ -316,3 +316,157 @@ a{
     width:100%;
 
 }
+
+/* =====================================================
+GLOBAL RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px){
+
+    .navbar{
+
+        padding:20px 5%;
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .nav-menu{
+
+        gap:25px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    #hero{
+
+        padding:140px 8% 80px;
+
+    }
+
+    #hero h1{
+
+        font-size:4rem;
+
+    }
+
+    .hero-description{
+
+        font-size:1.1rem;
+
+        letter-spacing:2px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .logo{
+
+        font-size:1.7rem;
+
+    }
+
+    .nav-menu{
+
+        gap:18px;
+
+    }
+
+    .nav-menu a{
+
+        font-size:.8rem;
+
+        letter-spacing:1px;
+
+    }
+
+    #hero h1{
+
+        font-size:3.2rem;
+
+    }
+
+    .hero-description{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    .hero-button,
+
+    .button{
+
+        width:100%;
+
+        max-width:280px;
+
+        text-align:center;
+
+        padding:18px 20px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .navbar{
+
+        padding:18px 5%;
+
+    }
+
+    .logo{
+
+        font-size:1.5rem;
+
+    }
+
+    .nav-menu{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    #hero{
+
+        padding:150px 6% 80px;
+
+    }
+
+    #hero h1{
+
+        font-size:2.6rem;
+
+        line-height:1.05;
+
+    }
+
+    .hero-subtitle{
+
+        font-size:.75rem;
+
+        letter-spacing:4px;
+
+    }
+
+    .hero-description{
+
+        font-size:.95rem;
+
+        letter-spacing:1px;
+
+    }
+
+}
