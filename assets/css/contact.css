@@ -288,3 +288,185 @@ FINAL MESSAGE
     line-height:2;
 
 }
+
+/* =====================================================
+RESPONSIVE
+===================================================== */
+
+@media (max-width:900px){
+
+    .storyteller-grid{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+    }
+
+    .story-content{
+
+        text-align:center;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .connect-hero{
+
+        padding:140px 25px 80px;
+
+    }
+
+    .connect-hero h1{
+
+        font-size:3.4rem;
+
+    }
+
+    .connect-subtitle{
+
+        font-size:1.05rem;
+
+        line-height:1.8;
+
+    }
+
+    .storyteller{
+
+        padding:120px 20px;
+
+    }
+
+    .story-content h2{
+
+        font-size:2.8rem;
+
+        margin-bottom:35px;
+
+    }
+
+    .story-content p{
+
+        font-size:1.05rem;
+
+    }
+
+    .connect-links{
+
+        margin:120px auto;
+
+    }
+
+    .connect-links h2{
+
+        font-size:2.8rem;
+
+        margin-bottom:60px;
+
+    }
+
+    .contact-row{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+        padding:28px 10px;
+
+    }
+
+    .contact-row h3{
+
+        font-size:1.3rem;
+
+    }
+
+    .arrow{
+
+        align-self:flex-end;
+
+        font-size:1.6rem;
+
+    }
+
+    .final-message{
+
+        padding:150px 20px 120px;
+
+    }
+
+    .final-message h2{
+
+        font-size:3rem;
+
+    }
+
+    .final-text{
+
+        font-size:1.05rem;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .connect-hero h1{
+
+        font-size:2.6rem;
+
+    }
+
+    .connect-subtitle{
+
+        font-size:.95rem;
+
+    }
+
+    .portrait-name{
+
+        font-size:1.7rem;
+
+    }
+
+    .story-content h2{
+
+        font-size:2.3rem;
+
+    }
+
+    .connect-links h2{
+
+        font-size:2.3rem;
+
+    }
+
+    .contact-row{
+
+        padding:24px 0;
+
+    }
+
+    .contact-row h3{
+
+        font-size:1.15rem;
+
+    }
+
+    .contact-row span{
+
+        font-size:.9rem;
+
+    }
+
+    .final-message h2{
+
+        font-size:2.4rem;
+
+    }
+
+}

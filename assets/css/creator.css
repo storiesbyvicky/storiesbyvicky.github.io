@@ -500,3 +500,214 @@ FALLING LETTERS
 
 }
 
+/* =====================================================
+CREATOR RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px){
+
+    .creator-hero h1{
+
+        font-size:4.5rem;
+
+    }
+
+    .creator-subtitle{
+
+        font-size:1.2rem;
+
+        max-width:600px;
+
+    }
+
+    .first-question h2{
+
+        font-size:4rem;
+
+    }
+
+    .philosophy blockquote{
+
+        font-size:3.2rem;
+
+    }
+
+    .creator-worlds h2{
+
+        font-size:3.5rem;
+
+    }
+
+    .future h2{
+
+        font-size:3.8rem;
+
+    }
+
+    .creator-ending h2{
+
+        font-size:4rem;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .creator-hero{
+
+        min-height:70vh;
+
+        padding:120px 25px 80px;
+
+    }
+
+    .creator-hero h1{
+
+        font-size:3.2rem;
+
+    }
+
+    .creator-subtitle{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    .scroll-arrow{
+
+        margin-top:60px;
+
+        font-size:2rem;
+
+    }
+
+    .first-question,
+
+    .philosophy,
+
+    .creator-worlds,
+
+    .future,
+
+    .creator-ending{
+
+        padding:120px 25px;
+
+    }
+
+    .first-question h2,
+
+    .creator-worlds h2,
+
+    .future h2{
+
+        font-size:2.8rem;
+
+    }
+
+    .philosophy blockquote{
+
+        font-size:2.5rem;
+
+    }
+
+    .first-question p,
+
+    .philosophy p,
+
+    .future p{
+
+        font-size:1.05rem;
+
+    }
+
+    .world-grid{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+    }
+
+    .world-item{
+
+        padding:40px 30px;
+
+    }
+
+    .creator-ending h2{
+
+        font-size:3rem;
+
+    }
+
+    .falling-text{
+
+        gap:5px;
+
+    }
+
+    .falling-text span{
+
+        font-size:1.5rem;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .creator-label,
+
+    .section-label{
+
+        font-size:.75rem;
+
+        letter-spacing:4px;
+
+    }
+
+    .creator-hero h1{
+
+        font-size:2.6rem;
+
+        line-height:1.1;
+
+    }
+
+    .first-question h2,
+
+    .creator-worlds h2,
+
+    .future h2,
+
+    .creator-ending h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .philosophy blockquote{
+
+        font-size:2rem;
+
+        line-height:1.4;
+
+    }
+
+    .world-item{
+
+        padding:30px 20px;
+
+    }
+
+    .world-item h3{
+
+        font-size:1.6rem;
+
+    }
+
+}

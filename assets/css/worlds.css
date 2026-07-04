@@ -66,11 +66,15 @@ WORLD CARD
 
     align-items:center;
 
+    margin-bottom:180px;
+
 }
 
 .world-cover img{
 
     width:100%;
+
+    max-width:300px;
 
     border-radius:10px;
 
@@ -149,6 +153,9 @@ blockquote{
 .world-button:hover{
 
     border-color:#C8A96A;
+    letter-spacing:1px;
+
+    transform:translateX(6px);
 
 }
 
@@ -226,7 +233,7 @@ CLOSING MESSAGE
 
 .closing-message{
 
-    padding:220px 20px 180px;
+    padding:60px 20px 180px;
 
     text-align:center;
 
@@ -269,5 +276,147 @@ CLOSING MESSAGE
     font-size:1.25rem;
 
     line-height:2;
+
+}
+
+/* =====================================================
+RESPONSIVE
+===================================================== */
+
+@media (max-width:900px){
+
+    .world-card,
+    .reverse{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+    }
+
+    .reverse .world-content,
+    .reverse .world-cover{
+
+        order:unset;
+
+    }
+
+    .world-cover{
+
+        text-align:center;
+
+    }
+
+    .world-cover img{
+
+        width:100%;
+
+        max-width:380px;
+
+        border-radius:10px;
+
+    }
+
+    .world-content{
+
+        text-align:center;
+
+    }
+
+    .divider{
+
+        margin:35px auto 45px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .worlds-hero{
+
+        padding-top:140px;
+
+        padding-bottom:80px;
+
+    }
+
+    .worlds-hero h1{
+
+        font-size:3.4rem;
+
+    }
+
+    .world-content h2{
+
+        font-size:2.8rem;
+
+    }
+
+    blockquote{
+
+        font-size:1.2rem;
+
+        padding-left:20px;
+
+    }
+
+    .world-gallery{
+
+        width:92%;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .worlds-hero h1{
+
+        font-size:2.6rem;
+
+    }
+
+    .worlds-hero span{
+
+        font-size:1rem;
+
+    }
+
+    .world-card{
+
+        gap:40px;
+
+    }
+
+    .world-cover img{
+
+        max-width:260px;
+
+    }
+
+    .world-content h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .world-quote{
+
+        font-size:1.15rem;
+
+    }
+
+    .closing-content h2{
+
+        font-size:2.4rem;
+
+    }
+
+    .closing-text{
+
+        font-size:1rem;
+
+    }
 
 }

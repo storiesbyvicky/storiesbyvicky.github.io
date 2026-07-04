@@ -318,112 +318,156 @@ a{
 }
 
 /* =====================================================
-GLOBAL RESPONSIVE
+MOBILE NAVIGATION
 ===================================================== */
 
-@media (max-width: 992px){
+.menu-toggle{
 
-    .navbar{
+    display:none;
 
-        padding:20px 5%;
+    margin-left:auto;
 
-        flex-direction:column;
+    flex-direction:column;
 
-        gap:20px;
+    gap:6px;
 
-    }
+    cursor:pointer;
 
-    .nav-menu{
-
-        gap:25px;
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
-    }
-
-    #hero{
-
-        padding:140px 8% 80px;
-
-    }
-
-    #hero h1{
-
-        font-size:4rem;
-
-    }
-
-    .hero-description{
-
-        font-size:1.1rem;
-
-        letter-spacing:2px;
-
-    }
+    z-index:1100;
 
 }
 
-@media (max-width:768px){
+.menu-toggle span{
+
+    display:block;
+
+    width:28px;
+
+    height:2px;
+
+    background:#F5F5F5;
+
+    transition:.35s ease;
+
+}
+
+.menu-toggle.active span:nth-child(1){
+
+    transform:translateY(8px) rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.menu-toggle.active span:nth-child(3){
+
+    transform:translateY(-8px) rotate(-45deg);
+
+}
+
+/* ==========================
+TABLET
+========================== */
+
+@media (max-width:900px){
+
+    .navbar{
+
+        padding:20px 6%;
+
+    }
 
     .logo{
 
-        font-size:1.7rem;
+        font-size:1.8rem;
 
     }
 
     .nav-menu{
 
-        gap:18px;
-
-    }
-
-    .nav-menu a{
-
-        font-size:.8rem;
-
-        letter-spacing:1px;
-
-    }
-
-    #hero h1{
-
-        font-size:3.2rem;
-
-    }
-
-    .hero-description{
-
-        font-size:1rem;
-
-        line-height:1.8;
-
-    }
-
-    .hero-button,
-
-    .button{
-
-        width:100%;
-
-        max-width:280px;
-
-        text-align:center;
-
-        padding:18px 20px;
+        gap:24px;
 
     }
 
 }
 
-@media (max-width:480px){
+/* ==========================
+MOBILE
+========================== */
+
+@media (max-width:768px){
 
     .navbar{
 
-        padding:18px 5%;
+        padding:18px 6%;
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
 
     }
+
+    .menu-toggle{
+
+        display:flex;
+
+        position:relative;
+
+        z-index:1200;
+
+    }
+
+    .nav-menu{
+
+        position:fixed;
+
+        top:0;
+
+        right:-100%;
+
+        width:260px;
+
+        height:100vh;
+
+        background:#0B0B0B;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:35px;
+
+        transition:right .4s ease;
+
+        z-index:1100;
+
+        border-left:1px solid rgba(255,255,255,.08);
+
+    }
+
+    .nav-menu.active{
+
+        right:0;
+
+    }
+
+}
+
+/* ==========================
+SMALL MOBILE
+========================== */
+
+@media (max-width:480px){
 
     .logo{
 
@@ -433,39 +477,9 @@ GLOBAL RESPONSIVE
 
     .nav-menu{
 
-        flex-direction:column;
+        top:72px;
 
-        gap:15px;
-
-    }
-
-    #hero{
-
-        padding:150px 6% 80px;
-
-    }
-
-    #hero h1{
-
-        font-size:2.6rem;
-
-        line-height:1.05;
-
-    }
-
-    .hero-subtitle{
-
-        font-size:.75rem;
-
-        letter-spacing:4px;
-
-    }
-
-    .hero-description{
-
-        font-size:.95rem;
-
-        letter-spacing:1px;
+        height:calc(100vh - 72px);
 
     }
 
