@@ -600,3 +600,73 @@ PAGE DIVIDER
     transform:translateY(0);
 
 }
+
+/* =====================================================
+DIARY OVERLAY - PHASE 1
+===================================================== */
+
+.diary-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(8px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.5s ease;
+
+    z-index:9999;
+
+}
+
+.diary-overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.diary-book{
+
+    width:340px;
+
+    height:460px;
+
+    transform:translateY(-120vh);
+
+}
+
+.diary-cover{
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2d2119,
+            #4a3528
+        );
+
+    border:1px solid rgba(212,175,55,.25);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55);
+
+}
