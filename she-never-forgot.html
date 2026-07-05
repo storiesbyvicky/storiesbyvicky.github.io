@@ -8,14 +8,6 @@
 
     <title>She Never Forgot | Stories by Vicky</title>
 
-    <p class="diary-note">
-
-    Some stories are never finished.
-
-    They are simply remembered differently.
-
-    </p>
-
     <!-- Google Fonts -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +25,8 @@
     <!-- World CSS -->
 
     <link rel="stylesheet" href="assets/css/snf.css">
+
+    <link rel="stylesheet" href="assets/css/diary.css">
 
 </head>
 
@@ -518,12 +512,81 @@ ENDING
 </main>
 
 <!-- =====================================
+DIARY OVERLAY
+====================================== -->
+
+<!-- =====================================================
+     CINEMATIC DIARY V2
+====================================================== -->
+
+<!-- ==========================================================
+     CINEMATIC DIARY V3
+========================================================== -->
+
+<div class="diary-overlay" id="diaryOverlay">
+
+    <div class="diary">
+
+        <div class="diary-shadow"></div>
+
+        <!-- Cover -->
+
+        <div class="diary-cover" id="diaryCover">
+
+            <div class="cover-spine"></div>
+
+            <div class="cover-symbol"></div>
+
+        </div>
+
+        <!-- Paper -->
+
+        <div class="diary-paper">
+
+            <div class="paper-inner">
+
+                <span class="paper-title">
+
+                    JOHN'S DIARY
+
+                </span>
+
+                <h2>
+
+                    Some stories are never finished.
+
+                </h2>
+
+                <p>
+
+                    They are simply remembered
+                    differently.
+
+                </p>
+
+                <button id="continueStory">
+
+                    Continue Reading
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================
 SCRIPTS
 ===================================== -->
 
 <script src="assets/js/script.js"></script>
 
 <script src="assets/js/snf.js"></script>
+
+<script src="assets/js/diary.js"></script>
 
 <script src="assets/js/atmosphere.js"></script>
 
@@ -533,22 +596,6 @@ SCRIPTS
 createAtmosphere("stars");
 
 </script>
-
-<!-- =====================================
-DIARY OVERLAY
-====================================== -->
-
-<div class="diary-overlay" id="diaryOverlay">
-
-    <div class="diary-book" id="diaryBook">
-
-        <div class="diary-cover">
-
-        </div>
-
-    </div>
-
-</div>
 
 </body>
 

@@ -1,0 +1,409 @@
+/* ==========================================================
+   DIARY V3
+   Stories by Vicky
+========================================================== */
+
+
+/* =======================
+   OVERLAY
+======================= */
+
+.diary-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.82);
+
+    backdrop-filter:blur(12px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.6s ease;
+
+    z-index:9999;
+
+}
+
+.diary-overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+
+/* =======================
+   DIARY
+======================= */
+
+.diary{
+
+    position:relative;
+
+    width:340px;
+
+    height:460px;
+
+    transform:translateY(-120vh);
+
+}
+
+
+
+/* =======================
+   DROP
+======================= */
+
+.diary.drop{
+
+    animation:diaryDrop 1.2s cubic-bezier(.22,1,.36,1) forwards;
+
+}
+
+@keyframes diaryDrop{
+
+    0%{
+
+        transform:translateY(-120vh);
+
+    }
+
+    82%{
+
+        transform:translateY(18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* =======================
+   SHADOW
+======================= */
+
+.diary-shadow{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-38px;
+
+    width:260px;
+
+    height:38px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.45);
+
+    filter:blur(25px);
+
+    opacity:0;
+
+}
+
+.diary.drop .diary-shadow{
+
+    animation:shadowLand .8s ease forwards;
+
+}
+
+@keyframes shadowLand{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-50%) scale(.5);
+
+    }
+
+    to{
+
+        opacity:.8;
+
+        transform:translateX(-50%) scale(1);
+
+    }
+
+}
+
+
+
+/* =======================
+   COVER
+======================= */
+
+.diary-cover{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+
+        145deg,
+
+        #151210,
+
+        #231d18,
+
+        #171412
+
+    );
+
+    border:1px solid rgba(212,175,55,.15);
+
+    transform-origin:left center;
+
+    transition:transform 1.3s ease;
+
+    z-index:3;
+
+    box-shadow:
+
+    0 35px 80px rgba(0,0,0,.55);
+
+}
+
+.diary-cover.open{
+
+    transform:
+
+    perspective(1800px)
+
+    rotateY(-118deg);
+
+}
+
+
+
+/* =======================
+   SPINE
+======================= */
+
+.cover-spine{
+
+    position:absolute;
+
+    left:10px;
+
+    top:0;
+
+    width:10px;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        to right,
+
+        rgba(0,0,0,.45),
+
+        rgba(255,255,255,.03)
+
+    );
+
+}
+
+
+
+/* =======================
+   GOLD SYMBOL
+======================= */
+
+.cover-symbol{
+
+    position:absolute;
+
+    width:18px;
+
+    height:18px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%) rotate(45deg);
+
+    background:#C8A84B;
+
+}
+
+
+
+/* =======================
+   PAPER
+======================= */
+
+.diary-paper{
+
+    position:absolute;
+
+    inset:8px;
+
+    border-radius:6px;
+
+    background:#F2E6D1;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+/* =======================
+   CONTENT
+======================= */
+
+.paper-inner{
+
+    width:82%;
+
+    text-align:center;
+
+    opacity:0;
+
+    transform:translateY(15px);
+
+    transition:.8s ease;
+
+}
+
+.paper-inner.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+.paper-title{
+
+    display:block;
+
+    letter-spacing:5px;
+
+    color:#A98533;
+
+    font-size:.75rem;
+
+    margin-bottom:18px;
+
+}
+
+
+
+.paper-inner h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:2.3rem;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+    color:#2A241F;
+
+}
+
+
+
+.paper-inner p{
+
+    color:#5E554C;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* =======================
+   BUTTON
+======================= */
+
+#continueStory{
+
+    padding:14px 34px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#C8A84B;
+
+    color:#111;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    transition:.6s ease;
+
+}
+
+#continueStory.show{
+
+    opacity:1;
+
+}
+
+
+
+/* =======================
+   MOBILE
+======================= */
+
+@media(max-width:768px){
+
+    .diary{
+
+        width:280px;
+
+        height:390px;
+
+    }
+
+}

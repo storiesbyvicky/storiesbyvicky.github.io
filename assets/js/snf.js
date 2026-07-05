@@ -1,24 +1,4 @@
 // =====================================
-// OPEN THE DIARY
-// =====================================
-
-const diaryButton = document.getElementById("openDiary");
-
-if (diaryButton) {
-
-    diaryButton.addEventListener("click", () => {
-
-        document.getElementById("memory-one").scrollIntoView({
-
-            behavior: "smooth"
-
-        });
-
-    });
-
-}
-
-// =====================================
 // MEMORY FADE
 // =====================================
 
