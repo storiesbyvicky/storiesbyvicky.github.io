@@ -55,6 +55,7 @@ h1{
     line-height:1;
     letter-spacing:-1px;
     text-align:center;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 
 h2{
@@ -98,8 +99,8 @@ BUTTON
 }
 
 /* =====================================================
-HERO
-===================================================== */
+HERO - WITH COURTROOM BACKGROUND
+===================================== */
 
 #hero{
     min-height:100vh;
@@ -108,9 +109,29 @@ HERO
     align-items:center;
     text-align:center;
     padding:140px 40px;
-    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), 
-                url('https://github.com/storiesbyvicky/storiesbyvicky.github.io/raw/main/assets/images/courtroom.jpg') center/cover no-repeat;
+    background-image: linear-gradient(135deg, rgba(14,14,16,0.75), rgba(14,14,16,0.65)), 
+                      url('assets/images/courtroom.jpg');
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#hero::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+}
+
+#hero .container{
+    position: relative;
+    z-index: 2;
 }
 
 .hero-subtitle{
@@ -311,56 +332,56 @@ CASE CARD - OLD LIBRARY FILE STYLING
     margin:auto;
     padding:0;
     background: linear-gradient(135deg, #D4AF8F 0%, #C9A876 50%, #B8956A 100%);
-    border: 1px solid #8B7355;
+    border: 2px solid #8B7355;
     box-shadow: 
         inset 0 1px 0 rgba(255,255,255,.3),
-        0 8px 24px rgba(0,0,0,.6),
-        0 2px 4px rgba(0,0,0,.4);
+        0 12px 30px rgba(0,0,0,.7),
+        0 4px 8px rgba(0,0,0,.5);
     position: relative;
     overflow: hidden;
-    transition: all .35s ease;
+    transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
     transform-origin: center;
     animation: slideInCard 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
 }
 
 .case-card:nth-child(1){
-    animation-delay: 0.2s;
+    animation-delay: 0.3s;
     animation-name: slideInCardLeft;
 }
 
 .case-card:nth-child(2){
-    animation-delay: 0.2s;
+    animation-delay: 0.3s;
     animation-name: slideInCardRight;
 }
 
 @keyframes slideInCardLeft {
     from {
         opacity: 0;
-        transform: translateX(-80px) rotateY(45deg) rotateZ(-15deg);
+        transform: translateX(-100px) rotateY(60deg) rotateZ(-20deg) skewY(5deg);
     }
     to {
         opacity: 1;
-        transform: translateX(0) rotateY(0) rotateZ(0deg);
+        transform: translateX(0) rotateY(0) rotateZ(0deg) skewY(0deg);
     }
 }
 
 @keyframes slideInCardRight {
     from {
         opacity: 0;
-        transform: translateX(80px) rotateY(-45deg) rotateZ(15deg);
+        transform: translateX(100px) rotateY(-60deg) rotateZ(20deg) skewY(-5deg);
     }
     to {
         opacity: 1;
-        transform: translateX(0) rotateY(0) rotateZ(0deg);
+        transform: translateX(0) rotateY(0) rotateZ(0deg) skewY(0deg);
     }
 }
 
 .case-card:hover{
-    transform: translateY(-8px) rotateZ(-2deg);
+    transform: translateY(-12px) rotateZ(-3deg) scale(1.02);
     box-shadow: 
         inset 0 1px 0 rgba(255,255,255,.4),
-        0 12px 32px rgba(0,0,0,.8),
-        0 4px 8px rgba(0,0,0,.6);
+        0 16px 40px rgba(0,0,0,.9),
+        0 6px 12px rgba(0,0,0,.7);
 }
 
 /* =====================================================
@@ -368,8 +389,8 @@ CASE CARD INNER CONTENT
 ===================================================== */
 
 .case-card-inner{
-    padding: 45px;
-    background: linear-gradient(to bottom, #EDD5B8 0%, #E8CBAD 100%);
+    padding: 50px 45px;
+    background: linear-gradient(to bottom, #F5E6D3 0%, #EDD5B8 50%, #E8CBAD 100%);
     position: relative;
     overflow: hidden;
 }
@@ -386,17 +407,18 @@ CASE CARD INNER CONTENT
             90deg,
             transparent,
             transparent 2px,
-            rgba(139, 115, 85, 0.03) 2px,
-            rgba(139, 115, 85, 0.03) 4px
+            rgba(139, 115, 85, 0.04) 2px,
+            rgba(139, 115, 85, 0.04) 4px
         ),
         repeating-linear-gradient(
             0deg,
             transparent,
             transparent 2px,
-            rgba(139, 115, 85, 0.02) 2px,
-            rgba(139, 115, 85, 0.02) 4px
+            rgba(139, 115, 85, 0.03) 2px,
+            rgba(139, 115, 85, 0.03) 4px
         );
     pointer-events: none;
+    z-index: 1;
 }
 
 .case-card-inner::after{
@@ -406,9 +428,10 @@ CASE CARD INNER CONTENT
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at 20% 50%, rgba(0,0,0,.08), transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(0,0,0,.05), transparent 50%);
+    background: radial-gradient(ellipse at 20% 50%, rgba(0,0,0,.12), transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(0,0,0,.08), transparent 50%);
     pointer-events: none;
+    z-index: 2;
 }
 
 /* =====================================================
@@ -417,12 +440,13 @@ CASE FILE HEADER BAND
 
 .case-header-band{
     position: relative;
-    padding: 12px 0;
-    margin: -45px -45px 25px -45px;
-    background: linear-gradient(90deg, #8B7355 0%, #A0826D 50%, #8B7355 100%);
-    border-bottom: 2px solid #6B5345;
+    padding: 14px 0;
+    margin: 0 0 0 0;
+    background: linear-gradient(90deg, #7A6B5C 0%, #8B7D6D 50%, #7A6B5C 100%);
+    border-bottom: 3px solid #5D4E3F;
     text-align: center;
-    z-index: 1;
+    z-index: 3;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 3px 6px rgba(0,0,0,.4);
 }
 
 .case-header-band::before{
@@ -432,18 +456,29 @@ CASE FILE HEADER BAND
     left: 0;
     right: 0;
     height: 1px;
-    background: rgba(255,255,255,.2);
+    background: rgba(255,255,255,.3);
+}
+
+.case-header-band::after{
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,.3), transparent);
 }
 
 .case-number{
     display: block;
-    color: #EDD5B8;
-    letter-spacing: 4px;
+    color: #F5E6D3;
+    letter-spacing: 5px;
     font-size: .75rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     position: relative;
-    z-index: 2;
+    z-index: 4;
+    text-shadow: 0 1px 2px rgba(0,0,0,.3);
 }
 
 /* =====================================================
@@ -452,20 +487,23 @@ CASE CARD CONTENT
 
 .case-card h3{
     font-family:"Cormorant Garamond",serif;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: 500;
     color: #3E2723;
-    margin-bottom: 25px;
-    letter-spacing: 2px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    text-shadow: 0 1px 1px rgba(255,255,255,.3);
 }
 
 .case-card p{
     color: #5D4037;
     margin-bottom: 35px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    font-size: 1rem;
+    line-height: 1.8;
 }
 
 /* =====================================================
@@ -473,12 +511,12 @@ CASE STATUS - AGED STAMP
 ===================================================== */
 
 .case-status{
-    margin: 35px 0;
-    padding: 22px 0;
-    border-top: 2px dashed rgba(91, 64, 55, .3);
-    border-bottom: 2px dashed rgba(91, 64, 55, .3);
+    margin: 40px 0;
+    padding: 25px 0;
+    border-top: 2px dashed rgba(91, 64, 55, .4);
+    border-bottom: 2px dashed rgba(91, 64, 55, .4);
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
 .status-label{
@@ -486,33 +524,34 @@ CASE STATUS - AGED STAMP
     color: #8B7355;
     font-size: .7rem;
     letter-spacing: 5px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .status-value{
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     letter-spacing: 4px;
     font-weight: 700;
     text-transform: uppercase;
     position: relative;
     display: inline-block;
-    padding: 8px 16px;
-    border: 2px solid;
+    padding: 10px 20px;
+    border: 2.5px solid;
     transform: rotate(-8deg);
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
 }
 
 .status-value.closed{
-    color: #5D4037;
-    border-color: #5D4037;
-    background: rgba(93, 64, 55, 0.08);
+    color: #6B5344;
+    border-color: #6B5344;
+    background: rgba(107, 83, 68, 0.1);
 }
 
 .status-value.restricted{
-    color: #C54242;
-    border-color: #C54242;
-    background: rgba(197, 66, 66, 0.08);
+    color: #A84040;
+    border-color: #A84040;
+    background: rgba(168, 64, 64, 0.1);
 }
 
 /* =====================================================
@@ -525,9 +564,9 @@ PURCHASE TITLE
     letter-spacing: 4px;
     font-size: .75rem;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
 /* =====================================================
@@ -537,32 +576,31 @@ PURCHASE LINKS
 .buy-links{
     display: flex;
     justify-content: center;
-    gap: 18px;
+    gap: 12px;
     flex-wrap: wrap;
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
 .buy-links a{
     display: inline-block;
-    padding: 12px 24px;
+    padding: 11px 22px;
     text-decoration: none;
     color: #5D4037;
     border: 2px solid #8B7355;
     letter-spacing: 2px;
     transition: all .35s ease;
-    width: 130px;
-    text-align: center;
-    background: rgba(255, 255, 255, .3);
-    font-weight: 500;
-    font-size: .85rem;
+    background: linear-gradient(135deg, rgba(255,255,255,.4), rgba(255,255,255,.1));
+    font-weight: 600;
+    font-size: .8rem;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 2px 4px rgba(0,0,0,.1);
 }
 
 .buy-links a:hover{
     background: #8B7355;
-    color: #EDD5B8;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    color: #F5E6D3;
+    transform: translateY(-3px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 6px 12px rgba(0,0,0,.3);
 }
 
 /* =====================================================
@@ -580,7 +618,8 @@ CASE REFERENCE - AGED LABEL
     padding-top: 18px;
     text-transform: uppercase;
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    font-weight: 600;
 }
 
 /* =====================================================
