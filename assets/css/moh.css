@@ -1,5 +1,5 @@
 /* =====================================================
-   MEASURE OF HARM v1.0
+   MEASURE OF HARM v2.0 - REALISTIC CASE FILES
 ===================================================== */
 
 /* =====================================================
@@ -7,31 +7,20 @@ RESET
 ===================================================== */
 
 *{
-
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
-
 }
 
 html{
-
     scroll-behavior:smooth;
-
 }
 
 body{
-
     background:#0E0E10;
-
     color:#F2F2F2;
-
     font-family:Inter,sans-serif;
-
     overflow-x:hidden;
-
 }
 
 /* =====================================================
@@ -39,17 +28,12 @@ LAYOUT
 ===================================================== */
 
 .container{
-
     width:min(900px,90%);
-
     margin:auto;
-
 }
 
 section{
-
     position:relative;
-
 }
 
 /* =====================================================
@@ -57,65 +41,39 @@ TYPOGRAPHY
 ===================================================== */
 
 .section-label{
-
-    color:#B8A27A;
-
+    color:#C9A876;
     text-transform:uppercase;
-
     letter-spacing:8px;
-
     font-size:.82rem;
-
     margin-bottom:30px;
-
 }
 
 h1{
-
     font-family:"Cormorant Garamond",serif;
-
     font-size:5.5rem;
-
     font-weight:500;
-
     line-height:1;
-
     letter-spacing:-1px;
-
     text-align:center;
-
 }
 
 h2{
-
     font-family:"Cormorant Garamond",serif;
-
     font-size:4rem;
-
     font-weight:500;
-
     line-height:1.05;
-
     text-align:center;
-
 }
 
 h3{
-
     font-size:1.3rem;
-
     letter-spacing:3px;
-
 }
 
 p{
-
     color:#9D9D9D;
-
     font-size:1.08rem;
-
     line-height:2;
-
 }
 
 /* =====================================================
@@ -123,33 +81,20 @@ BUTTON
 ===================================================== */
 
 .hero-button{
-
     display:inline-block;
-
     margin-top:50px;
-
     padding:16px 42px;
-
-    border:1px solid rgba(184,162,122,.4);
-
-    color:#B8A27A;
-
+    border:1px solid rgba(201,168,118,.4);
+    color:#C9A876;
     text-decoration:none;
-
     letter-spacing:3px;
-
     transition:.35s ease;
-
 }
 
 .hero-button:hover{
-
-    background:#B8A27A;
-
+    background:#C9A876;
     color:#111;
-
     transform:translateY(-4px);
-
 }
 
 /* =====================================================
@@ -157,31 +102,22 @@ HERO
 ===================================================== */
 
 #hero{
-
     min-height:100vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
     padding:140px 40px;
-
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), 
+                url('https://github.com/storiesbyvicky/storiesbyvicky.github.io/raw/main/assets/images/courtroom.jpg') center/cover no-repeat;
+    background-attachment: fixed;
 }
 
 .hero-subtitle{
-
     margin-top:45px;
-
     letter-spacing:4px;
-
     text-transform:uppercase;
-
     color:#8C8C8C;
-
 }
 
 /* =====================================================
@@ -189,33 +125,21 @@ QUESTION
 ===================================================== */
 
 #question{
-
     min-height:90vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
     padding:150px 40px;
-
 }
 
 #question h2{
-
     margin-bottom:40px;
-
 }
 
 #question p{
-
     max-width:600px;
-
     margin:0 auto;
-
 }
 
 /* =====================================================
@@ -223,61 +147,37 @@ BEGIN EXAMINATION
 ===================================================== */
 
 #openCourt{
-
     margin-top:70px;
-
     background:none;
-
     border:none;
-
-    color:#B8A27A;
-
+    color:#C9A876;
     cursor:pointer;
-
     letter-spacing:7px;
-
     font-size:.9rem;
-
     position:relative;
-
     transition:.3s;
-
 }
 
 #openCourt:hover{
-
     color:white;
-
 }
 
 #openCourt::before,
-
 #openCourt::after{
-
     content:"";
-
     position:absolute;
-
     top:50%;
-
     width:170px;
-
     height:1px;
-
     background:#777;
-
 }
 
 #openCourt::before{
-
     right:110%;
-
 }
 
 #openCourt::after{
-
     left:110%;
-
 }
 
 /* =====================================================
@@ -285,41 +185,25 @@ VERDICT RESERVED
 ===================================================== */
 
 #verdict{
-
     min-height:110vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
     padding:150px 40px;
-
     border-top:1px solid rgba(255,255,255,.05);
-
 }
 
 #verdict h2{
-
     margin:35px 0;
-
     max-width:800px;
-
     margin-left:auto;
-
     margin-right:auto;
-
 }
 
 #verdict p{
-
     color:#8F8F8F;
-
     letter-spacing:2px;
-
 }
 
 /* =====================================================
@@ -327,45 +211,29 @@ QUESTIONS
 ===================================================== */
 
 #questions{
-
     padding:100px 40px;
-
 }
 
 .question-block{
-
     max-width:760px;
-
     margin:0 auto;
-
     text-align:center;
-
 }
 
 .question-block h2{
-
     margin-bottom:30px;
-
 }
 
 .question-block p{
-
     max-width:520px;
-
     margin:auto;
-
 }
 
 .question-divider{
-
     width:1px;
-
     height:70px;
-
     margin:45px auto;
-
     background:rgba(255,255,255,.08);
-
 }
 
 /* =====================================================
@@ -373,35 +241,22 @@ ADRIAN
 ===================================================== */
 
 #adrian{
-
     min-height:80vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
     padding:150px 40px;
-
     border-top:1px solid rgba(255,255,255,.05);
-
 }
 
 #adrian h2{
-
     margin:35px 0;
-
 }
 
 .adrian-copy{
-
     max-width:620px;
-
     margin:auto;
-
 }
 
 /* =====================================================
@@ -409,33 +264,21 @@ PHILOSOPHY
 ===================================================== */
 
 #philosophy{
-
     min-height:90vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
     padding:150px 40px;
-
 }
 
 #philosophy h2{
-
     margin-bottom:40px;
-
 }
 
 .philosophy-copy{
-
     max-width:720px;
-
     margin:auto;
-
 }
 
 /* =====================================================
@@ -443,139 +286,233 @@ CASE FILES
 ===================================================== */
 
 #case-files{
-
     padding:140px 40px;
-
     text-align:center;
-
 }
 
 #case-files h2{
-
     margin-bottom:70px;
-
 }
 
 .case-grid{
-
     width:min(1100px,95%);
-
     margin:0 auto;
-
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
-
-    gap:50px;
-
-}
-
-.case-card{
-
-    max-width:380px;
-
-    margin:auto;
-
-    padding:45px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    background:rgba(255,255,255,.02);
-
-    transition:.35s ease;
-
-}
-
-.case-card:hover{
-
-    border-color:rgba(184,162,122,.35);
-
-    transform:translateY(-6px);
-
-}
-
-.case-number{
-
-    display:block;
-
-    margin-bottom:25px;
-
-    color:#B8A27A;
-
-    letter-spacing:5px;
-
-    font-size:.82rem;
-
-}
-
-.case-card h3{
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:2.1rem;
-
-    font-weight:500;
-
-    margin-bottom:25px;
-
-}
-
-.case-card p{
-
-    margin-bottom:35px;
-
+    gap:80px;
 }
 
 /* =====================================================
-CASE STATUS
+CASE CARD - OLD LIBRARY FILE STYLING
+===================================================== */
+
+.case-card{
+    max-width:380px;
+    margin:auto;
+    padding:0;
+    background: linear-gradient(135deg, #D4AF8F 0%, #C9A876 50%, #B8956A 100%);
+    border: 1px solid #8B7355;
+    box-shadow: 
+        inset 0 1px 0 rgba(255,255,255,.3),
+        0 8px 24px rgba(0,0,0,.6),
+        0 2px 4px rgba(0,0,0,.4);
+    position: relative;
+    overflow: hidden;
+    transition: all .35s ease;
+    transform-origin: center;
+    animation: slideInCard 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+.case-card:nth-child(1){
+    animation-delay: 0.2s;
+    animation-name: slideInCardLeft;
+}
+
+.case-card:nth-child(2){
+    animation-delay: 0.2s;
+    animation-name: slideInCardRight;
+}
+
+@keyframes slideInCardLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-80px) rotateY(45deg) rotateZ(-15deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotateY(0) rotateZ(0deg);
+    }
+}
+
+@keyframes slideInCardRight {
+    from {
+        opacity: 0;
+        transform: translateX(80px) rotateY(-45deg) rotateZ(15deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotateY(0) rotateZ(0deg);
+    }
+}
+
+.case-card:hover{
+    transform: translateY(-8px) rotateZ(-2deg);
+    box-shadow: 
+        inset 0 1px 0 rgba(255,255,255,.4),
+        0 12px 32px rgba(0,0,0,.8),
+        0 4px 8px rgba(0,0,0,.6);
+}
+
+/* =====================================================
+CASE CARD INNER CONTENT
+===================================================== */
+
+.case-card-inner{
+    padding: 45px;
+    background: linear-gradient(to bottom, #EDD5B8 0%, #E8CBAD 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.case-card-inner::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 115, 85, 0.03) 2px,
+            rgba(139, 115, 85, 0.03) 4px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 115, 85, 0.02) 2px,
+            rgba(139, 115, 85, 0.02) 4px
+        );
+    pointer-events: none;
+}
+
+.case-card-inner::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(0,0,0,.08), transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(0,0,0,.05), transparent 50%);
+    pointer-events: none;
+}
+
+/* =====================================================
+CASE FILE HEADER BAND
+===================================================== */
+
+.case-header-band{
+    position: relative;
+    padding: 12px 0;
+    margin: -45px -45px 25px -45px;
+    background: linear-gradient(90deg, #8B7355 0%, #A0826D 50%, #8B7355 100%);
+    border-bottom: 2px solid #6B5345;
+    text-align: center;
+    z-index: 1;
+}
+
+.case-header-band::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255,255,255,.2);
+}
+
+.case-number{
+    display: block;
+    color: #EDD5B8;
+    letter-spacing: 4px;
+    font-size: .75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+/* =====================================================
+CASE CARD CONTENT
+===================================================== */
+
+.case-card h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #3E2723;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+.case-card p{
+    color: #5D4037;
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 2;
+}
+
+/* =====================================================
+CASE STATUS - AGED STAMP
 ===================================================== */
 
 .case-status{
-
-    margin:35px 0;
-
-    padding:22px 0;
-
-    border-top:1px solid rgba(255,255,255,.08);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-
+    margin: 35px 0;
+    padding: 22px 0;
+    border-top: 2px dashed rgba(91, 64, 55, .3);
+    border-bottom: 2px dashed rgba(91, 64, 55, .3);
+    position: relative;
+    z-index: 2;
 }
 
 .status-label{
-
-    display:block;
-
-    color:#777;
-
-    font-size:.78rem;
-
-    letter-spacing:5px;
-
-    margin-bottom:12px;
-
+    display: block;
+    color: #8B7355;
+    font-size: .7rem;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .status-value{
-
-    font-size:1rem;
-
-    letter-spacing:3px;
-
-    font-weight:600;
-
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid;
+    transform: rotate(-8deg);
 }
 
 .status-value.closed{
-
-    color:#C9C9C9;
-
+    color: #5D4037;
+    border-color: #5D4037;
+    background: rgba(93, 64, 55, 0.08);
 }
 
 .status-value.restricted{
-
-    color:#C54242;
-
+    color: #C54242;
+    border-color: #C54242;
+    background: rgba(197, 66, 66, 0.08);
 }
 
 /* =====================================================
@@ -583,15 +520,14 @@ PURCHASE TITLE
 ===================================================== */
 
 .purchase-title{
-
-    margin:35px 0 22px;
-
-    color:#777;
-
-    letter-spacing:4px;
-
-    font-size:.78rem;
-
+    margin: 35px 0 22px;
+    color: #8B7355;
+    letter-spacing: 4px;
+    font-size: .75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
 }
 
 /* =====================================================
@@ -599,45 +535,52 @@ PURCHASE LINKS
 ===================================================== */
 
 .buy-links{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:18px;
-
-    flex-wrap:wrap;
-
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
 }
 
 .buy-links a{
-
-    display:inline-block;
-
-    padding:14px 28px;
-
-    text-decoration:none;
-
-    color:#B8A27A;
-
-    border:1px solid rgba(184,162,122,.35);
-
-    letter-spacing:2px;
-
-    transition:.35s ease;
-
-    width:140px;
-
-    text-align:center;
-
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #5D4037;
+    border: 2px solid #8B7355;
+    letter-spacing: 2px;
+    transition: all .35s ease;
+    width: 130px;
+    text-align: center;
+    background: rgba(255, 255, 255, .3);
+    font-weight: 500;
+    font-size: .85rem;
 }
 
 .buy-links a:hover{
+    background: #8B7355;
+    color: #EDD5B8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
 
-    background:#B8A27A;
+/* =====================================================
+CASE REFERENCE - AGED LABEL
+===================================================== */
 
-    color:#111;
-
+.case-ref{
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    color: #8B7355;
+    font-size: .65rem;
+    letter-spacing: 3px;
+    border-top: 1px dashed rgba(91, 64, 55, .3);
+    padding-top: 18px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
 }
 
 /* =====================================================
@@ -645,67 +588,23 @@ ENDING
 ===================================================== */
 
 #ending{
-
     padding:140px 40px;
-
     text-align:center;
-
     border-top:1px solid rgba(255,255,255,.05);
-
 }
 
 #ending .container{
-
     max-width:760px;
-
     margin:auto;
-
 }
 
 #ending h2{
-
     margin:35px 0;
-
 }
 
 #ending p{
-
     max-width:620px;
-
     margin:0 auto 45px;
-
-}
-
-/* =====================================================
-RESPONSIVE
-===================================================== */
-
-@media(max-width:900px){
-
-    h1{
-
-        font-size:4.7rem;
-
-    }
-
-    h2{
-
-        font-size:3.2rem;
-
-    }
-
-    .case-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .buy-links{
-
-        justify-content:center;
-
-    }
-
 }
 
 /* =====================================================
@@ -713,61 +612,50 @@ SECTION DIVIDER
 ===================================================== */
 
 .section-divider{
-
     width:min(900px,90%);
-
     margin:80px auto;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     gap:22px;
-
 }
 
 .divider-line{
-
     flex:1;
-
     height:1px;
-
     background:rgba(255,255,255,.12);
-
 }
 
 .divider-icon{
-
     color:#8A8A8A;
-
     font-size:1.2rem;
-
-     margin:0 12px;
-
+    margin:0 12px;
 }
 
 /* =====================================================
-CASE REFERENCE
+RESPONSIVE
 ===================================================== */
 
-.case-ref{
+@media(max-width:900px){
+    h1{
+        font-size:4.7rem;
+    }
 
-    margin-top:35px;
+    h2{
+        font-size:3.2rem;
+    }
 
-    display:flex;
+    .case-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
 
-    justify-content:space-between;
+    .buy-links{
+        justify-content:center;
+    }
 
-    color:#666;
-
-    font-size:.72rem;
-
-    letter-spacing:3px;
-
-    border-top:1px solid rgba(255,255,255,.05);
-
-    padding-top:18px;
-
+    .case-card:nth-child(1),
+    .case-card:nth-child(2){
+        animation-name: slideInCard;
+    }
 }
