@@ -17,7 +17,12 @@ html{
 }
 
 body{
-    background:#0E0E10;
+    background-image: linear-gradient(135deg, rgba(14,14,16,0.85), rgba(14,14,16,0.80)), 
+                      url('https://raw.githubusercontent.com/storiesbyvicky/storiesbyvicky.github.io/main/assets/images/courtroom.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color:#F2F2F2;
     font-family:Inter,sans-serif;
     overflow-x:hidden;
@@ -99,8 +104,8 @@ BUTTON
 }
 
 /* =====================================================
-HERO - WITH COURTROOM BACKGROUND
-===================================== */
+HERO
+===================================================== */
 
 #hero{
     min-height:100vh;
@@ -109,12 +114,6 @@ HERO - WITH COURTROOM BACKGROUND
     align-items:center;
     text-align:center;
     padding:140px 40px;
-    background-image: linear-gradient(135deg, rgba(14,14,16,0.75), rgba(14,14,16,0.65)), 
-                      url('https://raw.githubusercontent.com/storiesbyvicky/storiesbyvicky.github.io/main/assets/images/courtroom.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     position: relative;
 }
 
@@ -125,7 +124,7 @@ HERO - WITH COURTROOM BACKGROUND
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 100%);
     pointer-events: none;
 }
 
