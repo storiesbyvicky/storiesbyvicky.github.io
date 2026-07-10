@@ -13,7 +13,8 @@ body {
     pointer-events: none;
 }
 
-header, main { position: relative; z-index: 1; }
+header { position: relative; z-index: 2; }
+main { position: relative; z-index: 1; }
 
 .navbar {
     background: rgba(232, 220, 199, .78);
@@ -131,6 +132,15 @@ header, main { position: relative; z-index: 1; }
 @media (max-width: 640px) {
     .section-tag { letter-spacing: .3em; }
     #openDiary { padding: .95rem 1.35rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        background: #e8dcc7;
+        border-left-color: rgba(91, 49, 41, .16);
+    }
+
+    .nav-menu a { color: #38271f; }
 }
 
 @media (prefers-reduced-motion: reduce) {
