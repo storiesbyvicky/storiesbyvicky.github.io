@@ -1,798 +1,138 @@
-/* =====================================================
-SHE NEVER FORGOT v1.0
-===================================================== */
-
-/* =====================================================
-RESET
-===================================================== */
-
-*{
-
-    margin:0;
-
-    padding:0;
-
-    box-sizing:border-box;
-
+/* She Never Forgot: landing scene */
+body {
+    background: #e8dcc7;
+    color: #2e211c;
+    font-family: "Inter", sans-serif;
 }
 
-html{
-
-    scroll-behavior:smooth;
-
+.petal-field {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-body{
+header, main { position: relative; z-index: 1; }
 
-    background:#F2ECE3;
-
-    color:#44362E;
-
-    font-family:Inter,sans-serif;
-
-    overflow-x:hidden;
-
+.navbar {
+    background: rgba(232, 220, 199, .78);
+    border-bottom-color: rgba(91, 49, 41, .12);
 }
 
-/* =====================================================
-LAYOUT
-===================================================== */
+.logo, .nav-menu a { color: #38271f; }
 
-.container{
+.nav-menu a:hover { color: #9e2c3d; }
 
-    width:min(900px,90%);
+.menu-toggle span { background: #38271f; }
 
-    margin:auto;
-
+.petal-field::before,
+.petal-field::after {
+    content: "";
+    position: absolute;
+    width: 65vw;
+    height: 28vh;
+    border: 1px solid rgba(158, 44, 58, .18);
+    border-color: rgba(158, 44, 58, .18) transparent transparent transparent;
+    border-radius: 50%;
+    filter: blur(.2px);
 }
 
-section{
+.petal-field::before { top: 12%; left: -26%; transform: rotate(24deg); }
+.petal-field::after { right: -30%; bottom: 8%; transform: rotate(-32deg); }
 
-    position:relative;
-
+.petal-field span {
+    position: absolute;
+    top: -12%;
+    width: 11px;
+    height: 18px;
+    border-radius: 75% 20% 75% 20%;
+    background: linear-gradient(135deg, rgba(190, 65, 78, .7), rgba(90, 20, 35, .18));
+    box-shadow: 0 0 14px rgba(172, 47, 67, .18);
+    animation: petalDrift linear infinite;
 }
 
-/* =====================================================
-TYPOGRAPHY
-===================================================== */
+.petal-field span:nth-child(1) { left: 7%; animation-duration: 17s; animation-delay: -5s; }
+.petal-field span:nth-child(2) { left: 18%; animation-duration: 23s; animation-delay: -14s; transform: scale(.65); }
+.petal-field span:nth-child(3) { left: 33%; animation-duration: 19s; animation-delay: -9s; transform: scale(.8); }
+.petal-field span:nth-child(4) { left: 48%; animation-duration: 25s; animation-delay: -18s; transform: scale(.55); }
+.petal-field span:nth-child(5) { left: 62%; animation-duration: 21s; animation-delay: -3s; transform: scale(.9); }
+.petal-field span:nth-child(6) { left: 75%; animation-duration: 18s; animation-delay: -12s; transform: scale(.6); }
+.petal-field span:nth-child(7) { left: 88%; animation-duration: 26s; animation-delay: -20s; transform: scale(.75); }
+.petal-field span:nth-child(8) { left: 27%; animation-duration: 28s; animation-delay: -23s; transform: scale(.45); }
+.petal-field span:nth-child(9) { left: 55%; animation-duration: 16s; animation-delay: -8s; transform: scale(.7); }
+.petal-field span:nth-child(10) { left: 95%; animation-duration: 22s; animation-delay: -16s; transform: scale(.5); }
+.petal-field span:nth-child(11) { left: 41%; animation-duration: 24s; animation-delay: -6s; transform: scale(.6); }
+.petal-field span:nth-child(12) { left: 12%; animation-duration: 20s; animation-delay: -15s; transform: scale(.45); }
 
-.section-tag{
-
-    display:block;
-
-    margin-bottom:30px;
-
-    color:#9E7B5B;
-
-    letter-spacing:8px;
-
-    text-transform:uppercase;
-
-    font-size:.8rem;
-
+@keyframes petalDrift {
+    0% { margin-left: 0; opacity: 0; }
+    10% { opacity: .8; }
+    90% { opacity: .35; }
+    100% { top: 108%; margin-left: 14vw; opacity: 0; transform: rotate(540deg); }
 }
 
-h1{
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:5.5rem;
-
-    font-weight:500;
-
-    line-height:1;
-
-    text-align:center;
-
+.snf-hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 9rem 1.5rem 4rem;
+    text-align: center;
 }
 
-h2{
+.hero-content { max-width: 760px; }
 
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:4rem;
-
-    font-weight:500;
-
-    line-height:1.1;
-
-    text-align:center;
-
+.section-tag {
+    margin-bottom: 1.8rem;
+    color: #9e2c3d;
+    font-size: .72rem;
+    letter-spacing: .48em;
+    text-transform: uppercase;
 }
 
-p{
-
-    color:#6A5A4C;
-
-    font-size:1.08rem;
-
-    line-height:2.1;
-
-    font-weight:400;
-
-}
-/* =====================================================
-BUTTON
-===================================================== */
-
-.hero-button,
-
-#openDiary{
-
-    display:inline-block;
-
-    margin-top:45px;
-
-    padding:16px 42px;
-
-    border:1px solid rgba(158,123,91,.35);
-
-    background:none;
-
-    color:#9E7B5B;
-
-    text-decoration:none;
-
-    cursor:pointer;
-
-    letter-spacing:3px;
-
-    transition:.35s ease;
-
+.snf-hero h1 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 10vw, 7.4rem);
+    font-weight: 500;
+    line-height: .9;
+    letter-spacing: -.045em;
+    color: #302019;
 }
 
-.hero-button:hover,
-
-#openDiary:hover{
-
-    background:#9E7B5B;
-
-    color:white;
-
+.hero-copy {
+    margin: 2.25rem 0 0;
+    color: rgba(61, 39, 30, .72);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+    line-height: 1.45;
 }
 
-/* =====================================================
-HERO
-===================================================== */
-
-#hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:140px 40px;
-
+#openDiary {
+    margin-top: 3.2rem;
+    padding: 1.05rem 2.2rem;
+    border: 1px solid rgba(132, 43, 56, .58);
+    background: transparent;
+    color: #852d3b;
+    cursor: pointer;
+    font: 500 .72rem "Inter", sans-serif;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    transition: background .35s ease, color .35s ease, transform .35s ease;
 }
 
-#hero p{
-
-    margin-top:35px;
-
+#openDiary:hover, #openDiary:focus-visible {
+    background: #852d3b;
+    color: #fff7ea;
+    outline: none;
+    transform: translateY(-3px);
 }
 
-/* =====================================================
-MEMORIES
-===================================================== */
-
-#memory-one,
-#memory-two,
-#memory-three{
-
-    min-height:80vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:140px 40px;
-
+@media (max-width: 640px) {
+    .section-tag { letter-spacing: .3em; }
+    #openDiary { padding: .95rem 1.35rem; }
 }
 
-#memory-one h2,
-#memory-two h2,
-#memory-three h2{
-
-    margin-bottom:35px;
-
-}
-
-#memory-one p,
-#memory-two p,
-#memory-three p{
-
-    max-width:650px;
-
-    margin:0 auto;
-
-}
-
-/* =====================================================
-JOHN
-===================================================== */
-
-#john{
-
-    min-height:85vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:150px 40px;
-
-    border-top:1px solid rgba(158,123,91,.15);
-
-}
-
-#john h2{
-
-    margin:35px 0;
-
-}
-
-#john p{
-
-    max-width:600px;
-
-    margin:auto;
-
-}
-
-/* =====================================================
-EMILY
-===================================================== */
-
-#emily{
-
-    min-height:85vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:150px 40px;
-
-}
-
-#emily h2{
-
-    margin:35px 0;
-
-}
-
-#emily p{
-
-    max-width:600px;
-
-    margin:auto;
-
-}
-
-/* =====================================================
-WHAT REMAINED
-===================================================== */
-
-#story{
-
-    min-height:90vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:150px 40px;
-
-    border-top:1px solid rgba(158,123,91,.15);
-
-}
-
-#story h2{
-
-    margin:35px 0;
-
-}
-
-#story p{
-
-    max-width:700px;
-
-    margin:auto;
-
-}
-
-/* =====================================================
-THE CHOICE
-===================================================== */
-
-#choice{
-
-    min-height:90vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:150px 40px;
-
-}
-
-#choice h2{
-
-    margin:35px 0;
-
-}
-
-#choice p{
-
-    max-width:600px;
-
-    margin:auto;
-
-}
-
-/* =====================================================
-BOOK SECTION
-===================================================== */
-
-#book{
-
-    padding:160px 40px;
-
-}
-
-.book-layout{
-
-    display:grid;
-
-    grid-template-columns:360px 1fr;
-
-    gap:80px;
-
-    align-items:center;
-
-}
-
-.book-cover{
-
-    text-align:center;
-
-}
-
-.book-cover img{
-
-    width:100%;
-
-    max-width:320px;
-
-    border-radius:6px;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
-
-}
-
-.book-info h2{
-
-    text-align:left;
-
-    margin-bottom:30px;
-
-}
-
-.book-info p{
-
-    margin-bottom:25px;
-
-}
-
-.book-tagline{
-
-    font-style:italic;
-
-    color:#8B6B52;
-
-}
-
-.buy-links{
-
-    display:flex;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-    margin-top:40px;
-
-}
-
-.buy-links a{
-
-    width:150px;
-
-    text-align:center;
-
-    padding:15px 0;
-
-    border:1px solid rgba(158,123,91,.35);
-
-    text-decoration:none;
-
-    color:#9E7B5B;
-
-    transition:.35s ease;
-
-}
-
-.buy-links a:hover{
-
-    background:#9E7B5B;
-
-    color:white;
-
-}
-
-/* =====================================================
-ENDING
-===================================================== */
-
-#ending{
-
-    min-height:90vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:150px 40px;
-
-    border-top:1px solid rgba(158,123,91,.15);
-
-}
-
-#ending h2{
-
-    margin:35px 0;
-
-}
-
-#ending p{
-
-    max-width:600px;
-
-    margin:0 auto 40px;
-
-}
-
-/* =====================================================
-RESPONSIVE
-===================================================== */
-
-@media(max-width:900px){
-
-    h1{
-
-        font-size:4.3rem;
-
-    }
-
-    h2{
-
-        font-size:3rem;
-
-    }
-
-    .book-layout{
-
-        grid-template-columns:1fr;
-
-        text-align:center;
-
-    }
-
-    .book-info h2{
-
-        text-align:center;
-
-    }
-
-    .buy-links{
-
-        justify-content:center;
-
-    }
-
-}
-
-/* =====================================
-PAGE DIVIDER
-===================================== */
-
-.page-divider{
-
-    width:min(700px,90%);
-
-    margin:50px auto;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:18px;
-
-    color:#A28B73;
-
-    font-size:.82rem;
-
-    letter-spacing:3px;
-
-}
-
-.page-divider span{
-
-    flex:1;
-
-    height:1px;
-
-    background:rgba(120,90,60,.12);
-
-}
-
-.diary-note{
-
-    margin:20px 0 35px;
-
-    font-style:italic;
-
-    color:#8A725E;
-
-    border-left:2px solid rgba(158,123,91,.3);
-
-    padding-left:18px;
-
-}
-
-.fade-memory{
-
-    opacity:0;
-
-    transform:translateY(20px);
-
-    transition:all .8s ease;
-
-}
-
-.fade-memory.show{
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-/* =====================================================
-DIARY OVERLAY - PHASE 1
-===================================================== */
-
-.diary-overlay{
-
-    position:fixed;
-
-    inset:0;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:rgba(0,0,0,.65);
-
-    backdrop-filter:blur(8px);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.5s ease;
-
-    z-index:9999;
-
-}
-
-.diary-overlay.show{
-
-    opacity:1;
-
-    visibility:visible;
-
-}
-
-.diary-book{
-
-    position:relative;
-
-    width:340px;
-
-    height:460px;
-
-    transform:translateY(-120vh);
-
-}
-
-.diary-book::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:8px;
-
-    right:-8px;
-
-    width:12px;
-
-    height:95%;
-
-    border-radius:0 8px 8px 0;
-
-    background:
-
-        repeating-linear-gradient(
-
-            to bottom,
-
-            #F4E9D6 0px,
-
-            #F4E9D6 2px,
-
-            #E4D6BF 3px
-
-        );
-
-}
-
-.diary-cover{
-
-    position:relative;
-
-    width:100%;
-
-    height:100%;
-
-    border-radius:10px;
-
-    overflow:hidden;
-
-    background:
-
-        radial-gradient(circle at 20% 15%,
-        rgba(255,255,255,.03),
-        transparent 35%),
-
-        linear-gradient(
-        145deg,
-        #171412 0%,
-        #211B17 45%,
-        #14110F 100%);
-
-    border:1px solid rgba(212,175,55,.22);
-
-    box-shadow:
-
-        0 45px 90px rgba(0,0,0,.65),
-
-        inset 0 0 0 1px rgba(255,255,255,.02);
-
-    transform-origin:left center;
-
-    z-index:2;
-
-    transition:transform 1.4s cubic-bezier(.22,1,.36,1);
-
-}
-
-.diary-cover::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:12px;
-
-    top:0;
-
-    width:8px;
-
-    height:100%;
-
-    background:
-
-        linear-gradient(
-
-            to right,
-
-            rgba(0,0,0,.35),
-
-            rgba(255,255,255,.02)
-
-        );
-
-}
-
-.diary-cover::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    top:50%;
-
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    color:rgba(212,175,55,.75);
-
-    font-size:2rem;
-
-    letter-spacing:2px;
-
-}
-
-.diary-pages{
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:10px;
-
-    background:#f4ead6;
-
-    overflow:hidden;
-
-    z-index:1;
-
-}
-
-.diary-cover.open{
-
-    transform:
-
-        perspective(1400px)
-
-        rotateY(-145deg);
-
+@media (prefers-reduced-motion: reduce) {
+    .petal-field span { animation: none; opacity: .28; }
 }

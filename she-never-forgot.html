@@ -1,262 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>She Never Forgot | Stories by Vicky</title>
-
-    <!-- Google Fonts -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-          rel="stylesheet">
-
-    <!-- Global -->
-
-    <link rel="stylesheet"
-          href="assets/css/style.css">
-
-    <link rel="stylesheet"
-          href="assets/css/portal.css">
-
-    <!-- SNF -->
-
-    <link rel="stylesheet"
-          href="assets/css/snf.css">
-
-    <link rel="stylesheet"
-          href="assets/css/diary.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/snf.css">
+    <link rel="stylesheet" href="assets/css/diary.css">
 </head>
-
 <body>
-
-<canvas id="atmosphere"></canvas>
-
-<!-- ======================================================
-HEADER
-====================================================== -->
-
-<header>
-
-<nav class="navbar">
-
-    <a href="index.html"
-       class="logo">
-
-        Stories by Vicky
-
-    </a>
-
-    <div class="menu-toggle">
-
-        <span></span>
-        <span></span>
-        <span></span>
-
+    <canvas id="atmosphere"></canvas>
+    <div class="petal-field" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <ul class="nav-menu">
+    <header>
+        <nav class="navbar" aria-label="Primary navigation">
+            <a href="index.html" class="logo">Stories by Vicky</a>
+            <div class="menu-toggle" aria-label="Toggle navigation" role="button" tabindex="0">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="worlds.html">Worlds</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="creator.html">Creator</a></li>
+                <li><a href="contact.html">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <li><a href="worlds.html">Worlds</a></li>
+    <main>
+        <section id="hero" class="snf-hero">
+            <div class="container hero-content">
+                <p class="section-tag">A diary remembered</p>
+                <h1>She Never Forgot</h1>
+                <p class="hero-copy">Some memories never ask for permission.<br>They simply return.</p>
+                <button id="openDiary" class="hero-button" type="button">Open John’s Diary</button>
+            </div>
+        </section>
+    </main>
 
-        <li><a href="projects.html">Projects</a></li>
-
-        <li><a href="creator.html">Creator</a></li>
-
-        <li><a href="contact.html">Connect</a></li>
-
-    </ul>
-
-</nav>
-
-</header>
-
-
-
-<!-- ======================================================
-MAIN
-====================================================== -->
-
-<main>
-
-
-
-<!-- ======================================================
-HERO
-====================================================== -->
-
-<section id="hero">
-
-    <div class="container hero-content">
-
-        <span class="section-tag">
-
-            A DIARY REMEMBERED
-
-        </span>
-
-        <h1>
-
-            She Never Forgot
-
-        </h1>
-
-        <p>
-
-            Some memories never ask for permission.
-            They simply return.
-
-        </p>
-
-        <button id="openDiary"
-                class="hero-button">
-
-            Open John's Diary
-
-        </button>
-
+    <div id="diaryOverlay" class="diary-overlay" aria-hidden="true">
+        <div class="diary-stage">
+            <div class="diary" role="dialog" aria-modal="true" aria-labelledby="diaryTitle">
+                <div class="diary-shadow"></div>
+                <div id="diaryCover" class="diary-cover" aria-hidden="true">
+                    <span class="cover-spine"></span>
+                    <span class="cover-frame"></span>
+                    <span class="cover-title">John’s<br>Diary</span>
+                    <span class="cover-symbol">✦</span>
+                </div>
+                <div class="diary-paper">
+                    <div class="paper-grain"></div>
+                    <div class="paper-inner">
+                        <p id="chapterLabel" class="paper-title"></p>
+                        <p id="chapterNumber" class="page-number"></p>
+                        <div id="pageContent" class="page-content" aria-live="polite"></div>
+                        <div class="paper-footer">
+                            <button id="previousPage" class="page-control" type="button">← Previous</button>
+                            <button id="nextPage" class="page-control page-control-primary" type="button">Turn the page →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="closeDiary" class="close-diary" type="button" aria-label="Close diary">×</button>
+        </div>
     </div>
 
-</section>
-
-
-
-<!-- ======================================================
-DIARY OVERLAY
-====================================================== -->
-
-<div id="diaryOverlay"
-     class="diary-overlay">
-
-<div class="diary">
-
-<div class="diary-shadow"></div>
-
-
-
-<!-- ======================================================
-LEATHER COVER
-====================================================== -->
-
-<div class="diary-cover"
-     id="diaryCover">
-
-<div class="cover-spine"></div>
-
-<div class="cover-symbol"></div>
-
-</div>
-
-
-
-<!-- ======================================================
-PAPER
-====================================================== -->
-
-<div class="diary-paper">
-
-<div class="paper-inner">
-
-
-
-<!-- ======================================================
-HEADER
-====================================================== -->
-
-<div class="paper-header">
-
-<span id="chapterLabel">
-
-Memory I
-
-</span>
-
-<span id="chapterNumber">
-
-01 / 08
-
-</span>
-
-</div>
-
-
-
-<!-- ======================================================
-BODY
-====================================================== -->
-
-<div class="paper-body">
-
-<h2 id="chapterTitle">
-
-Some people leave.
-
-</h2>
-
-<p id="chapterText">
-
-Some memories don't.
-
-</p>
-
-</div>
-
-
-
-<!-- ======================================================
-FOOTER
-====================================================== -->
-
-<div class="paper-footer">
-
-<button id="nextChapter">
-
-Turn the Page →
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</main>
-
-<!-- ======================================================
-SCRIPTS
-====================================================== -->
-
-<script src="assets/js/script.js"></script>
-
-<script src="assets/js/diary.js"></script>
-
-<script src="assets/js/atmosphere.js"></script>
-
-<script>
-
-createAtmosphere("stars");
-
-</script>
-
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/snf.js"></script>
+    <script src="assets/js/diary.js"></script>
+    <script src="assets/js/atmosphere.js"></script>
+    <script>createAtmosphere("stars");</script>
 </body>
-
 </html>
