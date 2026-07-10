@@ -1,58 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>She Never Forgot | Stories by Vicky</title>
 
     <!-- Google Fonts -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
 
-    <!-- Global CSS -->
+    <!-- Global -->
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet"
+          href="assets/css/style.css">
 
-    <link rel="stylesheet" href="assets/css/portal.css">
+    <link rel="stylesheet"
+          href="assets/css/portal.css">
 
-    <!-- World CSS -->
+    <!-- SNF -->
 
-    <link rel="stylesheet" href="assets/css/snf.css">
+    <link rel="stylesheet"
+          href="assets/css/snf.css">
 
-    <link rel="stylesheet" href="assets/css/diary.css">
+    <link rel="stylesheet"
+          href="assets/css/diary.css">
 
 </head>
 
 <body>
 
-    <canvas id="atmosphere"></canvas>
+<canvas id="atmosphere"></canvas>
 
-<!-- =====================================
+<!-- ======================================================
 HEADER
-===================================== -->
-
-<!-- ==========================
-     HEADER
-========================== -->
+====================================================== -->
 
 <header>
 
-    <nav class="navbar">
+<nav class="navbar">
 
-    <a href="index.html" class="logo">
+    <a href="index.html"
+       class="logo">
 
         Stories by Vicky
 
     </a>
-
-    <!-- Mobile Toggle -->
 
     <div class="menu-toggle">
 
@@ -78,45 +83,47 @@ HEADER
 
 </header>
 
-<!-- =====================================
-DIARY WORLD
-===================================== -->
+
+
+<!-- ======================================================
+MAIN
+====================================================== -->
 
 <main>
 
-<!-- =====================================
+
+
+<!-- ======================================================
 HERO
-===================================== -->
+====================================================== -->
 
 <section id="hero">
 
-    <div class="container">
+    <div class="container hero-content">
 
         <span class="section-tag">
 
-            THE MEMORY
+            A DIARY REMEMBERED
 
         </span>
 
         <h1>
 
-            Some memories
-
-            never ask
-
-            for permission.
+            She Never Forgot
 
         </h1>
 
         <p>
 
+            Some memories never ask for permission.
             They simply return.
 
         </p>
 
-        <button id="openDiary">
+        <button id="openDiary"
+                class="hero-button">
 
-            Open the Diary
+            Open John's Diary
 
         </button>
 
@@ -124,472 +131,125 @@ HERO
 
 </section>
 
-<!-- =====================================
-MEMORY I
-===================================== -->
 
-<section id="memory-one">
 
-    <div class="container">
+<!-- ======================================================
+DIARY OVERLAY
+====================================================== -->
 
-        <span class="section-tag">
+<div id="diaryOverlay"
+     class="diary-overlay">
 
-            MEMORY I
+<div class="diary">
 
-        </span>
+<div class="diary-shadow"></div>
 
-        <h2>
 
-            Some people leave.
 
-        </h2>
+<!-- ======================================================
+LEATHER COVER
+====================================================== -->
 
-        <p>
+<div class="diary-cover"
+     id="diaryCover">
 
-            Some memories don't.
+<div class="cover-spine"></div>
 
-        </p>
-
-    </div>
-
-</section>
-
-<div class="page-divider">
-
-    <span></span>
-
-    Page 01
-
-    <span></span>
+<div class="cover-symbol"></div>
 
 </div>
 
-<!-- =====================================
-MEMORY II
-===================================== -->
 
-<section id="memory-two">
 
-    <div class="container">
+<!-- ======================================================
+PAPER
+====================================================== -->
 
-        <span class="section-tag">
+<div class="diary-paper">
 
-            MEMORY II
+<div class="paper-inner">
 
-        </span>
 
-        <h2>
 
-            There are conversations
+<!-- ======================================================
+HEADER
+====================================================== -->
 
-            you continue
+<div class="paper-header">
 
-            long after
+<span id="chapterLabel">
 
-            they've ended.
+Memory I
 
-        </h2>
+</span>
 
-    </div>
+<span id="chapterNumber">
 
-</section>
+01 / 08
 
-<div class="page-divider">
-
-    <span></span>
-
-    Page 02
-
-    <span></span>
+</span>
 
 </div>
 
-<!-- =====================================
-MEMORY III
-===================================== -->
 
-<section id="memory-three">
 
-    <div class="container">
+<!-- ======================================================
+BODY
+====================================================== -->
 
-        <span class="section-tag">
+<div class="paper-body">
 
-            MEMORY III
+<h2 id="chapterTitle">
 
-        </span>
+Some people leave.
 
-        <h2>
+</h2>
 
-            The hardest goodbye
+<p id="chapterText">
 
-            is the one
+Some memories don't.
 
-            you never knew
-
-            had already happened.
-
-        </h2>
-
-    </div>
-
-</section>
-
-<div class="page-divider">
-
-    <span></span>
-
-    Page 03
-
-    <span></span>
+</p>
 
 </div>
 
-<!-- =====================================
-A NAME
-===================================== -->
 
-<section id="john">
 
-    <div class="container">
+<!-- ======================================================
+FOOTER
+====================================================== -->
 
-        <span class="section-tag">
+<div class="paper-footer">
 
-            A NAME
+<button id="nextChapter">
 
-        </span>
+Turn the Page →
 
-        <h2>
+</button>
 
-            John
+</div>
 
-        </h2>
+</div>
 
-        <p>
+</div>
 
-            Some stories are written.
+</div>
 
-            Others are remembered.
+</div>
 
-        </p>
-
-    </div>
-
-</section>
-
-<!-- =====================================
-ANOTHER NAME
-===================================== -->
-
-<section id="emily">
-
-    <div class="container">
-
-        <span class="section-tag">
-
-            ANOTHER NAME
-
-        </span>
-
-        <h2>
-
-            Emily
-
-        </h2>
-
-        <p>
-
-            Not every love ends.
-
-            Some simply become memories.
-
-        </p>
-
-    </div>
-
-</section>
-
-<!-- ========= PART 3 STARTS HERE ========= -->
-
-<!-- =====================================
-THE STORY
-===================================== -->
-
-<section id="story">
-
-    <div class="container">
-
-        <span class="section-tag">
-
-            WHAT REMAINED
-
-        </span>
-
-        <h2>
-
-            Some stories
-
-            are not remembered
-
-            because they ended.
-
-        </h2>
-
-        <p>
-
-            They are remembered because
-
-            they changed the people
-
-            who lived them.
-
-        </p>
-
-    </div>
-
-</section>
-
-<!-- =====================================
-THE CHOICE
-===================================== -->
-
-<section id="choice">
-
-    <div class="container">
-
-        <span class="section-tag">
-
-            THE CHOICE
-
-        </span>
-
-        <h2>
-
-            Sometimes
-
-            love survives.
-
-        </h2>
-
-        <p>
-
-            Sometimes...
-
-            memory does.
-
-        </p>
-
-    </div>
-
-</section>
-
-<!-- =====================================
-THE NOVEL
-===================================== -->
-
-<section id="book">
-
-    <div class="container">
-
-        <span class="section-tag">
-
-            THE LAST CHAPTER
-
-        </span>
-
-        <div class="book-layout">
-
-            <!-- Book Cover -->
-
-            <div class="book-cover">
-
-                <img src="assets/books/she-never-forgot-cover.jpg"
-                     alt="She Never Forgot">
-
-            </div>
-
-            <!-- Book Details -->
-
-            <div class="book-info">
-
-                <h2>
-
-                    She Never Forgot
-
-                </h2>
-
-                <p>
-
-                    A Diary Remembered.
-
-                    <br>
-
-                    A Love That Endured.
-
-                </p>
-
-                <p class="book-tagline">
-
-                    Some stories aren't forgotten.
-
-                    They simply become part
-
-                    of who we are.
-
-                </p>
-
-                <div class="buy-links">
-
-                    <a href="YOUR_PAPERBACK_LINK"
-
-                       target="_blank"
-
-                       rel="noopener noreferrer">
-
-                        Paperback
-
-                    </a>
-
-                    <a href="YOUR_KINDLE_LINK"
-
-                       target="_blank"
-
-                       rel="noopener noreferrer">
-
-                        Kindle
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =====================================
-ENDING
-===================================== -->
-
-<section id="ending">
-
-    <div class="container">
-
-        <span class="section-tag">
-
-            CLOSE THE DIARY
-
-        </span>
-
-        <h2>
-
-            Some people
-
-            never return.
-
-        </h2>
-
-        <p>
-
-            Their memories always do.
-
-        </p>
-
-        <a href="worlds.html"
-
-           class="hero-button">
-
-            Close the Diary
-
-        </a>
-
-    </div>
-
-</section>
+</div>
 
 </main>
 
-<!-- =====================================
-DIARY OVERLAY
-====================================== -->
-
-<!-- =====================================================
-     CINEMATIC DIARY V2
+<!-- ======================================================
+SCRIPTS
 ====================================================== -->
 
-<!-- ==========================================================
-     CINEMATIC DIARY V3
-========================================================== -->
-
-<div class="diary-overlay" id="diaryOverlay">
-
-    <div class="diary">
-
-        <div class="diary-shadow"></div>
-
-        <!-- Cover -->
-
-        <div class="diary-cover" id="diaryCover">
-
-            <div class="cover-spine"></div>
-
-            <div class="cover-symbol"></div>
-
-        </div>
-
-        <!-- Paper -->
-
-        <div class="diary-paper">
-
-            <div class="paper-inner">
-
-                <span class="paper-title">
-
-                    JOHN'S DIARY
-
-                </span>
-
-                <h2>
-
-                    Some stories are never finished.
-
-                </h2>
-
-                <p>
-
-                    They are simply remembered
-                    differently.
-
-                </p>
-
-                <button id="continueStory">
-
-                    Continue Reading
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<!-- =====================================
-SCRIPTS
-===================================== -->
-
 <script src="assets/js/script.js"></script>
-
-<script src="assets/js/snf.js"></script>
 
 <script src="assets/js/diary.js"></script>
 
 <script src="assets/js/atmosphere.js"></script>
-
 
 <script>
 
