@@ -1,14 +1,14 @@
 /* She Never Forgot: landing scene */
 body {
-    background: #e8dcc7;
-    color: #2e211c;
+    background: #1d120d;
+    color: #f6e8cf;
     font-family: "Inter", sans-serif;
 }
 
 .petal-field {
     position: fixed;
     inset: 0;
-    z-index: 0;
+    display: none;
     overflow: hidden;
     pointer-events: none;
 }
@@ -17,15 +17,15 @@ header { position: relative; z-index: 2; }
 main { position: relative; z-index: 1; }
 
 .navbar {
-    background: rgba(232, 220, 199, .78);
-    border-bottom-color: rgba(91, 49, 41, .12);
+    background: rgba(22, 13, 9, .72);
+    border-bottom-color: rgba(232, 194, 123, .14);
 }
 
-.logo, .nav-menu a { color: #38271f; }
+.logo, .nav-menu a { color: #f6e8cf; }
 
-.nav-menu a:hover { color: #9e2c3d; }
+.nav-menu a:hover { color: #e2bd77; }
 
-.menu-toggle span { background: #38271f; }
+.menu-toggle span { background: #f6e8cf; }
 
 .petal-field::before,
 .petal-field::after {
@@ -79,13 +79,16 @@ main { position: relative; z-index: 1; }
     place-items: center;
     padding: 9rem 1.5rem 4rem;
     text-align: center;
+    background-image: linear-gradient(90deg, rgba(12, 7, 5, .2), rgba(12, 7, 5, .08)), url("../images/she-never-forgot-diary-hero.png");
+    background-position: center;
+    background-size: cover;
 }
 
 .hero-content { max-width: 760px; }
 
 .section-tag {
     margin-bottom: 1.8rem;
-    color: #9e2c3d;
+    color: #e2bd77;
     font-size: .72rem;
     letter-spacing: .48em;
     text-transform: uppercase;
@@ -98,12 +101,14 @@ main { position: relative; z-index: 1; }
     font-weight: 500;
     line-height: .9;
     letter-spacing: -.045em;
-    color: #302019;
+    color: #f7ead3;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, .65);
 }
 
 .hero-copy {
     margin: 2.25rem 0 0;
-    color: rgba(61, 39, 30, .72);
+    color: rgba(247, 234, 211, .82);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, .72);
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(1.35rem, 2.5vw, 1.7rem);
     line-height: 1.45;
@@ -112,9 +117,9 @@ main { position: relative; z-index: 1; }
 #openDiary {
     margin-top: 3.2rem;
     padding: 1.05rem 2.2rem;
-    border: 1px solid rgba(132, 43, 56, .58);
+    border: 1px solid rgba(226, 189, 119, .68);
     background: transparent;
-    color: #852d3b;
+    color: #f4d69b;
     cursor: pointer;
     font: 500 .72rem "Inter", sans-serif;
     letter-spacing: .2em;
@@ -123,8 +128,8 @@ main { position: relative; z-index: 1; }
 }
 
 #openDiary:hover, #openDiary:focus-visible {
-    background: #852d3b;
-    color: #fff7ea;
+    background: #d4a958;
+    color: #21140d;
     outline: none;
     transform: translateY(-3px);
 }
@@ -136,11 +141,11 @@ main { position: relative; z-index: 1; }
 
 @media (max-width: 768px) {
     .nav-menu {
-        background: #e8dcc7;
-        border-left-color: rgba(91, 49, 41, .16);
+        background: #21140d;
+        border-left-color: rgba(232, 194, 123, .16);
     }
 
-    .nav-menu a { color: #38271f; }
+    .nav-menu a { color: #f6e8cf; }
 }
 
 @media (prefers-reduced-motion: reduce) {

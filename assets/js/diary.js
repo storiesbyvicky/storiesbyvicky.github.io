@@ -22,18 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const label = document.getElementById("chapterLabel");
     const number = document.getElementById("chapterNumber");
     const content = document.getElementById("pageContent");
+    const turnSheet = document.getElementById("pageTurnSheet");
     let pageIndex = 0;
     let lastFocus;
+    let isTurning = false;
 
-    if (!openButton || !overlay || !diary || !cover || !content) return;
+    if (!openButton || !overlay || !diary || !cover || !content || !turnSheet) return;
 
-    const renderPage = (animate = false) => {
+    const renderPage = () => {
         const page = pages[pageIndex];
-        if (animate) {
-            content.classList.remove("is-turning");
-            void content.offsetWidth;
-            content.classList.add("is-turning");
-        }
         label.textContent = page.label;
         number.textContent = `${String(pageIndex + 1).padStart(2, "0")} / ${String(pages.length).padStart(2, "0")}`;
         previousButton.disabled = pageIndex === 0;
@@ -60,6 +57,31 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    const turnPage = direction => {
+        const nextIndex = pageIndex + direction;
+        if (isTurning || nextIndex < 0 || nextIndex >= pages.length) return;
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            pageIndex = nextIndex;
+            renderPage();
+            return;
+        }
+
+        isTurning = true;
+        const animationClass = direction > 0 ? "turn-forward" : "turn-back";
+        turnSheet.classList.add(animationClass);
+
+        window.setTimeout(() => {
+            pageIndex = nextIndex;
+            renderPage();
+        }, 650);
+
+        turnSheet.addEventListener("animationend", () => {
+            turnSheet.classList.remove(animationClass);
+            isTurning = false;
+        }, { once: true });
+    };
+
     const openDiary = () => {
         lastFocus = document.activeElement;
         pageIndex = 0;
@@ -82,15 +104,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     openButton.addEventListener("click", openDiary);
     closeButton.addEventListener("click", closeDiary);
-    previousButton.addEventListener("click", () => { if (pageIndex > 0) { pageIndex--; renderPage(true); } });
-    nextButton.addEventListener("click", () => { if (pageIndex < pages.length - 1) { pageIndex++; renderPage(true); } });
+    previousButton.addEventListener("click", () => turnPage(-1));
+    nextButton.addEventListener("click", () => turnPage(1));
     diary.addEventListener("animationend", event => { if (event.animationName === "diaryDrop") cover.classList.add("open"); });
     cover.addEventListener("transitionend", event => { if (event.propertyName === "transform" && cover.classList.contains("open")) diary.classList.add("ready"); });
     overlay.addEventListener("click", event => { if (event.target === overlay) closeDiary(); });
     document.addEventListener("keydown", event => {
         if (!overlay.classList.contains("show")) return;
         if (event.key === "Escape") closeDiary();
-        if (event.key === "ArrowRight" && pageIndex < pages.length - 1) { pageIndex++; renderPage(true); }
-        if (event.key === "ArrowLeft" && pageIndex > 0) { pageIndex--; renderPage(true); }
+        if (event.key === "ArrowRight") turnPage(1);
+        if (event.key === "ArrowLeft") turnPage(-1);
     });
 });
