@@ -133,6 +133,18 @@ HERO
     z-index: 2;
 }
 
+#hero{
+    background:
+        linear-gradient(90deg, rgba(8,8,9,.26), rgba(8,8,9,.06) 48%, rgba(8,8,9,.2)),
+        url("../images/measure-of-harm-courtroom-hero.png") center / cover;
+}
+
+#hero h1,
+#hero .hero-subtitle,
+#hero .section-label{
+    text-shadow:0 2px 18px rgba(0,0,0,.78);
+}
+
 .hero-subtitle{
     margin-top:45px;
     letter-spacing:4px;
@@ -619,6 +631,76 @@ CASE REFERENCE - AGED LABEL
     position: relative;
     z-index: 3;
     font-weight: 600;
+}
+
+/* Cinematic evidence folders */
+.case-card{
+    perspective:1200px;
+    border:0;
+    background:none;
+    box-shadow:none;
+    opacity:1;
+    overflow:visible;
+    animation:none;
+    transform:none;
+    transition:filter .35s ease;
+}
+
+.case-card.file-arrived:nth-child(1){
+    animation:fileSlideInLeft 1.15s cubic-bezier(.18,.82,.22,1.12) forwards;
+}
+
+.case-card.file-arrived:nth-child(2){
+    animation:fileSlideInRight 1.15s cubic-bezier(.18,.82,.22,1.12) forwards;
+}
+
+@keyframes fileSlideInLeft{
+    0%{ opacity:0; transform:translateX(-75vw) rotate(-24deg) rotateY(42deg); }
+    74%{ opacity:1; transform:translateX(18px) rotate(2deg) rotateY(-5deg); }
+    100%{ opacity:1; transform:translateX(0) rotate(-1.2deg) rotateY(0); }
+}
+
+@keyframes fileSlideInRight{
+    0%{ opacity:0; transform:translateX(75vw) rotate(24deg) rotateY(-42deg); }
+    74%{ opacity:1; transform:translateX(-18px) rotate(-2deg) rotateY(5deg); }
+    100%{ opacity:1; transform:translateX(0) rotate(1.2deg) rotateY(0); }
+}
+
+.case-card:hover{
+    transform:translateY(-10px) rotate(-2.5deg) scale(1.02);
+    box-shadow:none;
+}
+
+.case-card-inner{
+    min-height:470px;
+    padding:68px 45px 48px;
+    background:url("../images/measure-of-harm-case-file.png") center / 100% 100% no-repeat;
+    box-shadow:0 20px 45px rgba(0,0,0,.72), 0 4px 10px rgba(0,0,0,.55);
+}
+
+.case-card-inner::before{
+    opacity:.34;
+}
+
+.case-header-band{
+    margin:0 28px -22px;
+    z-index:5;
+    transform:rotate(-1deg);
+}
+
+.status-value.closed{
+    color:#875038;
+    border-color:#875038;
+}
+
+@media (prefers-reduced-motion:reduce){
+    .case-card,
+    .case-card:nth-child(1),
+    .case-card:nth-child(2){
+        opacity:1;
+        transform:none;
+        animation:none;
+    }
 }
 
 /* =====================================================
