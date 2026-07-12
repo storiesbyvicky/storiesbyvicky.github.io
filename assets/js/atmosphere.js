@@ -119,9 +119,29 @@ class Star {
         this.x = random(0, Engine.width);
         this.y = random(0, Engine.height);
 
-        this.radius = random(0.4,1.6);
+        const type = Math.random();
 
-        this.alpha = random(0.25,0.9);
+if(type < 0.75){
+
+    // Small distant stars
+    this.radius = random(0.4,1);
+    this.alpha = random(0.15,0.35);
+
+}
+else if(type < 0.95){
+
+    // Normal stars
+    this.radius = random(1,1.8);
+    this.alpha = random(0.45,0.75);
+
+}
+else{
+
+    // Bright stars
+    this.radius = random(1.8,2.6);
+    this.alpha = random(0.85,1);
+
+}
 
         this.twinkle = random(0,Math.PI*2);
 
@@ -132,7 +152,9 @@ class Star {
 
     update(){
 
-        this.twinkle += 0.02;
+        this.twinkleSpeed = random(0.008,0.025);
+
+        this.twinkle += this.twinkleSpeed;
 
         this.x += this.speedX;
         this.y += this.speedY;
@@ -148,6 +170,10 @@ class Star {
     draw(){
 
         ctx.save();
+
+        ctx.shadowBlur = this.radius * 4;
+
+        ctx.shadowColor = "rgba(255,255,255,.6)";
 
         ctx.globalAlpha =
             this.alpha +
@@ -187,15 +213,19 @@ class StarLayer extends Layer{
 
         }
 
+        this.shootingStar = new ShootingStar();
+
     }
 
     update(){
 
-        this.items.forEach(star=>{
+        this.items.forEach(star => {
 
-            star.update();
+        star.update();
 
         });
+
+        this.shootingStar.update(1 / 60);
 
     }
 
@@ -206,6 +236,107 @@ class StarLayer extends Layer{
             star.draw();
 
         });
+
+        this.shootingStar.draw();
+
+    }
+
+}
+
+/*=========================================================
+    SHOOTING STAR
+=========================================================*/
+
+class ShootingStar {
+
+    constructor() {
+        this.reset(true);
+    }
+
+    reset(initial = false) {
+
+        this.active = false;
+
+        this.wait =
+            initial
+                ? random(5, 12)
+                : random(15, 30);
+
+        this.timer = 0;
+
+        this.duration = random(0.8, 1.2);
+
+        this.startX = random(Engine.width * 0.55, Engine.width * 0.95);
+        this.startY = random(0, Engine.height * 0.35);
+
+        this.endX = this.startX - random(180, 320);
+        this.endY = this.startY + random(80, 160);
+
+    }
+
+    update(delta) {
+
+        this.timer += delta;
+
+        if (!this.active) {
+
+            if (this.timer >= this.wait) {
+
+                this.active = true;
+                this.timer = 0;
+
+            }
+
+            return;
+
+        }
+
+        if (this.timer >= this.duration) {
+
+            this.reset();
+
+        }
+
+    }
+
+    draw() {
+
+        if (!this.active) return;
+
+        const t = this.timer / this.duration;
+
+        const x = this.startX + (this.endX - this.startX) * t;
+        const y = this.startY + (this.endY - this.startY) * t;
+
+        ctx.save();
+
+        ctx.lineWidth = 1.4;
+
+        ctx.strokeStyle = "rgba(229,194,122,.65)";
+
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "#E5C27A";
+
+        ctx.beginPath();
+
+        ctx.moveTo(x, y);
+
+        ctx.lineTo(
+            x + 55,
+            y - 30
+        );
+
+        ctx.stroke();
+
+        ctx.fillStyle = "#FFF9E6";
+
+        ctx.beginPath();
+
+        ctx.arc(x, y, 1.8, 0, Math.PI * 2);
+
+        ctx.fill();
+
+        ctx.restore();
 
     }
 
