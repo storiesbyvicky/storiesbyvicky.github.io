@@ -305,29 +305,94 @@ body.court-impact{
 .court-gavel{
     position:absolute;
     inset:0;
-    display:grid;
-    place-items:center;
     opacity:0;
-    transform:translateY(-58vh) scale(.82);
-    filter:contrast(1.1) saturate(.85);
+    z-index:2;
+    pointer-events:none;
 }
 
-.court-gavel img{
-    width:min(86vw,900px);
-    height:100vh;
-    object-fit:contain;
+.gavel{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:min(56vw,520px);
+    transform-origin:20% 58%;
+    transform:translate(220px,-300px) rotate(-78deg) scale(0.98);
+    filter:drop-shadow(0 18px 28px rgba(0,0,0,.62));
 }
 
-.court-transition.active .court-gavel{
-    animation:gavelStrike 1.45s cubic-bezier(.18,.75,.2,1) forwards;
+.gavel-svg{
+    display:block;
+    width:100%;
+    height:auto;
+    overflow:visible;
+    transform:scaleX(-1);
+    transform-origin:center;
+}
+
+.gavel-block{
+    position:absolute;
+    left:50%;
+    bottom:16vh;
+    transform:translateX(-50%);
+    width:clamp(170px,18vw,260px);
+    height:clamp(30px,3.6vw,46px);
+    border-radius:999px;
+    background:radial-gradient(ellipse at 50% 38%, #8b5d3d 0%, #613f29 62%, #40281b 100%);
+    box-shadow:0 10px 18px rgba(0,0,0,.46), inset 0 1px 2px rgba(255,255,255,.08);
+}
+
+#court-transition.active .court-gavel{
+    animation:gavelLayerIn .15s linear forwards;
+}
+
+#court-transition.active .gavel{
+    animation:gavelStrike 1.35s cubic-bezier(.2,.82,.24,1) forwards;
+}
+
+#court-transition.active .gavel-block{
+    animation:blockHit 1.35s cubic-bezier(.2,.82,.24,1) forwards;
+}
+
+@keyframes gavelLayerIn{
+    from{ opacity:0; }
+    to{ opacity:1; }
 }
 
 @keyframes gavelStrike{
-    0%{ opacity:0; transform:translateY(-58vh) scale(.82); }
-    14%{ opacity:1; }
-    68%{ opacity:1; transform:translateY(7vh) scale(1.08); }
-    78%{ opacity:1; transform:translateY(0) scale(1); }
-    100%{ opacity:1; transform:translateY(0) scale(1); }
+    0%{
+        transform:translate(220px,-300px) rotate(-78deg) scale(0.98);
+    }
+    55%{
+        transform:translate(95px,-120px) rotate(-34deg) scale(1);
+    }
+    66%{
+        transform:translate(-38px,118px) rotate(8deg) scale(1);
+    }
+    76%{
+        transform:translate(-48px,106px) rotate(4deg) scale(1);
+    }
+    100%{
+        transform:translate(-46px,110px) rotate(5deg) scale(1);
+    }
+}
+
+@keyframes blockHit{
+    0%,56%{
+        transform:translateX(-50%) scale(1);
+        filter:brightness(1);
+    }
+    66%{
+        transform:translateX(-50%) scale(1.08);
+        filter:brightness(1.24);
+    }
+    78%{
+        transform:translateX(-50%) scale(1.02);
+        filter:brightness(1.08);
+    }
+    100%{
+        transform:translateX(-50%) scale(1);
+        filter:brightness(1);
+    }
 }
 
 .court-crack{
