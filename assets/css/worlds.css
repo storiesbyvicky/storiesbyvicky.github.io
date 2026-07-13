@@ -60,9 +60,11 @@ WORLD CARD
 
     display:grid;
 
-    grid-template-columns:480px 1fr;
+    grid-template-columns:minmax(260px,320px) minmax(0,1fr);
 
-    gap:100px;
+    column-gap:56px;
+
+    row-gap:40px;
 
     align-items:center;
 
@@ -71,17 +73,11 @@ WORLD CARD
 }
 
 .world-cover img{
-
     width:100%;
-
-    max-width:300px;
-
+    max-width:320px;
     border-radius:10px;
-
     box-shadow:0 20px 60px rgba(0,0,0,.45);
-
     transition:.4s;
-
 }
 
 .world-cover img:hover{
@@ -161,20 +157,18 @@ blockquote{
 
 .reverse{
 
-    grid-template-columns:1fr 480px;
+    grid-template-columns:minmax(0,1fr) minmax(260px,320px);
 
 }
 
+/* Tighten spacing only for reverse cards (text-left, image-right) */
 .reverse .world-content{
-
-    order:1;
-
+    justify-self:end;
+    max-width:620px;
 }
 
 .reverse .world-cover{
-
-    order:2;
-
+    justify-self:start;
 }
 
 .world-label{
@@ -294,11 +288,14 @@ RESPONSIVE
 
     }
 
-    .reverse .world-content,
+    /* Tighten spacing only for reverse cards (text-left, image-right) */
+    .reverse .world-content{
+    justify-self:end;
+    max-width:620px;
+    }
+
     .reverse .world-cover{
-
-        order:unset;
-
+    justify-self:start;
     }
 
     .world-cover{

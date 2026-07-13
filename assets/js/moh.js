@@ -1,100 +1,73 @@
 const openCourt = document.getElementById("openCourt");
+const gavelVideo = document.getElementById("gavelVideo");
 const transition = document.getElementById("court-transition");
 const flash = document.querySelector(".court-flash");
 const crack = document.querySelector(".court-crack");
 const universe = document.getElementById("court-universe");
 
-function createCourtAudioContext(){
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
+const GAVEL_HIT_TIME = 1.55; // set your real hit second
+const GAVEL_END_TIME = 2.50; // when transition should disappear
 
-    if(!AudioContext) return null;
+let closeFallbackTimer = null;
+let enteredUniverse = false;
 
-    const context = new AudioContext();
-    context.resume();
-    return context;
+function enterUniverse() {
+    if (enteredUniverse) return;
+    enteredUniverse = true;
+    universe?.classList.add("show");
 }
 
-function playCourtImpact(context){
+function closeCourtTransition() {
+    enterUniverse(); // ensure world is shown before closing overlay
 
-    if(!context) return;
+    transition?.classList.remove("active");
+    flash?.classList.remove("flash");
+    crack?.classList.remove("cracked");
 
-    const oscillator = context.createOscillator();
-    const gain = context.createGain();
+    if (gavelVideo) {
+        gavelVideo.pause();
+        gavelVideo.currentTime = 0;
+    }
 
-    oscillator.type = "sine";
-    oscillator.frequency.setValueAtTime(76, context.currentTime);
-    oscillator.frequency.exponentialRampToValueAtTime(34, context.currentTime + .18);
-    gain.gain.setValueAtTime(.001, context.currentTime);
-    gain.gain.exponentialRampToValueAtTime(.18, context.currentTime + .012);
-    gain.gain.exponentialRampToValueAtTime(.001, context.currentTime + .28);
-
-    oscillator.connect(gain).connect(context.destination);
-    oscillator.start();
-    oscillator.stop(context.currentTime + .3);
-
-    oscillator.addEventListener("ended",()=>context.close());
+    if (closeFallbackTimer) {
+        clearTimeout(closeFallbackTimer);
+        closeFallbackTimer = null;
+    }
 }
 
-if(openCourt){
-
-    openCourt.addEventListener("click",()=>{
-
-        const impactAudio = createCourtAudioContext();
-
+if (openCourt && transition) {
+    openCourt.addEventListener("click", () => {
+        enteredUniverse = false;
         transition.classList.add("active");
 
-        setTimeout(()=>{
+        if (gavelVideo) {
+            gavelVideo.currentTime = 0;
+            const p = gavelVideo.play();
+            if (p) p.catch(() => {});
 
-            playCourtImpact(impactAudio);
+            const onTimeUpdate = () => {
+                if (gavelVideo.currentTime >= GAVEL_HIT_TIME) {
+                    flash?.classList.add("flash");
+                    crack?.classList.add("cracked");
+                    enterUniverse();
+                    gavelVideo.removeEventListener("timeupdate", onTimeUpdate);
+                }
+            };
 
-            document.body.classList.add("court-impact");
+            gavelVideo.addEventListener("timeupdate", onTimeUpdate);
+        } else {
+            // fallback if video not available
+            setTimeout(() => {
+                flash?.classList.add("flash");
+                crack?.classList.add("cracked");
+                enterUniverse();
+            }, 900);
+        }
 
-            flash.classList.add("flash");
-
-            crack.classList.add("cracked");
-
-        },1050);
-
-        setTimeout(()=>{
-
-            universe.classList.add("show");
-
-        },1550);
-
-        setTimeout(()=>{
-
-            transition.classList.remove("active");
-
-            flash.classList.remove("flash");
-
-            crack.classList.remove("cracked");
-
-            document.body.classList.remove("court-impact");
-
-        },2000);
-
+        closeFallbackTimer = setTimeout(closeCourtTransition, GAVEL_END_TIME * 1000 + 120);
     });
-
 }
 
-if(universe){
-
-    const files = universe.querySelectorAll(".case-card");
-    const observer = new IntersectionObserver((entries, currentObserver)=>{
-
-        entries.forEach(entry=>{
-
-            if(entry.isIntersecting){
-
-                entry.target.classList.add("file-arrived");
-                currentObserver.unobserve(entry.target);
-
-            }
-
-        });
-
-    },{threshold:.28});
-
-    files.forEach(file=>observer.observe(file));
-
+if (gavelVideo) {
+    gavelVideo.addEventListener("ended", closeCourtTransition);
 }

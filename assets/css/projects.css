@@ -515,3 +515,7 @@ RESPONSIVE
     }
 
 }
+
+body.worlds-page #atmosphere{
+    filter: brightness(1.12) contrast(1.08);
+}

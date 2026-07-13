@@ -39,6 +39,28 @@ const Engine = {
 
 };
 
+const isWorldsPage =
+    window.location.pathname.includes("worlds.html") ||
+    window.location.pathname.endsWith("/worlds");
+
+const PARTICLE_PROFILE = isWorldsPage
+    ? {
+        starsCount: 240,
+        goldCount: 320,
+        starAlphaBoost: 1.28,
+        goldAlphaBoost: 1.32,
+        starGlowBoost: 1.35,
+        goldGlowBoost: 1.3
+      }
+    : {
+        starsCount: 170,
+        goldCount: 250,
+        starAlphaBoost: 1,
+        goldAlphaBoost: 1,
+        starGlowBoost: 1,
+        goldGlowBoost: 1
+      };
+
 /*=========================================================
     CANVAS
 =========================================================*/
@@ -205,12 +227,8 @@ class StarLayer extends Layer{
 
         this.items=[];
 
-        for(let i=0;i<170;i++){
-
-            this.items.push(
-                new Star()
-            );
-
+        for(let i=0;i<PARTICLE_PROFILE.starsCount;i++){
+        this.items.push(new Star());
         }
 
         this.shootingStar = new ShootingStar();
@@ -418,10 +436,11 @@ class GoldMote {
 
         ctx.save();
 
-        ctx.globalAlpha = this.alpha;
+        ctx.globalAlpha = Math.min(1, this.alpha * PARTICLE_PROFILE.goldAlphaBoost);
 
-        ctx.shadowBlur = this.radius * 6;
-        ctx.shadowColor = "rgba(200,169,106,0.9)";
+        ctx.shadowBlur = this.radius * 6 * PARTICLE_PROFILE.goldGlowBoost;
+
+        ctx.shadowColor = "rgba(200,169,106,0.95)";
 
         ctx.fillStyle = "#E5C27A";
 
@@ -449,12 +468,8 @@ class GoldLayer extends Layer{
 
         this.items = [];
 
-        for(let i=0;i<250;i++){
-
-            this.items.push(
-                new GoldMote()
-            );
-
+        for(let i=0;i<PARTICLE_PROFILE.goldCount;i++){
+        this.items.push(new GoldMote());
         }
 
     }
