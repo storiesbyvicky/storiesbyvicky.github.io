@@ -352,27 +352,99 @@ p{
 
     margin-bottom:35px;
 
+    position:relative;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+    background:#07121e;
+
+}
+
+.planet::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-12%;
+
+    z-index:0;
+
+    background-position:center;
+
+    background-size:cover;
+
+    will-change:transform;
+
+}
+
+.planet::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    background:radial-gradient(circle at 32% 28%, transparent 20%, rgba(1,7,18,.12) 55%, rgba(1,4,12,.66) 100%);
+
+    box-shadow:inset -13px -12px 24px rgba(0,0,0,.55);
+
+    pointer-events:none;
+
+    z-index:1;
+
 }
 
 .earth .planet{
 
-    background:radial-gradient(circle at 35% 35%,
-    #76B7FF,
-    #194F87);
-
     box-shadow:
-        0 0 40px rgba(90,170,255,.35);
+        0 0 28px rgba(90,170,255,.35),
+        0 0 70px rgba(58,129,210,.16);
+
+}
+
+.earth .planet::before{
+
+    background-image:url("../images/wwcnt-earth-surface.png");
+
+    animation:planetSpin 34s linear infinite;
 
 }
 
 .other-side .planet{
 
-    background:radial-gradient(circle at 35% 35%,
-    #FFFFFF,
-    #9C7BFF);
-
     box-shadow:
-        0 0 45px rgba(180,150,255,.45);
+        0 0 30px rgba(190,148,255,.45),
+        0 0 72px rgba(150,110,255,.18);
+
+}
+
+.other-side .planet::before{
+
+    background-image:url("../images/wwcnt-other-side-surface.png");
+
+    animation:planetSpinReverse 42s linear infinite;
+
+}
+
+@keyframes planetSpin{
+
+    from{ transform:rotate(0deg) scale(1.04); }
+
+    to{ transform:rotate(360deg) scale(1.04); }
+
+}
+
+@keyframes planetSpinReverse{
+
+    from{ transform:rotate(360deg) scale(1.04); }
+
+    to{ transform:rotate(0deg) scale(1.04); }
 
 }
 
@@ -780,5 +852,16 @@ RESPONSIVE
     font-size:.95rem;
 
     letter-spacing:1px;
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    .earth .planet::before,
+    .other-side .planet::before{
+
+        animation:none;
+
+    }
 
 }
