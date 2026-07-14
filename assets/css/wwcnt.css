@@ -855,6 +855,129 @@ RESPONSIVE
 
 }
 
+/* Cosmic-glass purchase links */
+#book .buy-links a{
+
+    position:relative;
+
+    isolation:isolate;
+
+    min-width:145px;
+
+    overflow:hidden;
+
+    padding:15px 30px;
+
+    border:1px solid rgba(149,205,255,.7);
+
+    clip-path:polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+
+    background:
+        radial-gradient(circle at 14% 70%, rgba(255,255,255,.95) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 83% 24%, rgba(168,208,255,.9) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 62% 62%, rgba(255,255,255,.7) 0 1px, transparent 1.6px),
+        linear-gradient(110deg, rgba(22,45,112,.88), rgba(65,40,133,.72) 52%, rgba(7,18,57,.92));
+
+    color:#eff8ff;
+
+    letter-spacing:1.8px;
+
+    text-shadow:0 1px 6px rgba(0,0,0,.8);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.14),
+        0 0 18px rgba(87,147,255,.22),
+        0 8px 20px rgba(0,0,0,.28);
+
+}
+
+#book .buy-links a::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-35% -15%;
+
+    z-index:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(104,177,255,.75), transparent 28%),
+        radial-gradient(ellipse at 66% 45%, rgba(182,111,255,.7), transparent 32%),
+        radial-gradient(circle at 48% 36%, rgba(255,255,255,.85) 0 1px, transparent 2px),
+        radial-gradient(circle at 72% 68%, rgba(255,255,255,.7) 0 1px, transparent 2px);
+
+    animation:cosmicButtonDrift 7s ease-in-out infinite alternate;
+
+}
+
+#book .buy-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:0;
+
+    pointer-events:none;
+
+    background:linear-gradient(110deg, transparent 28%, rgba(255,255,255,.32) 48%, transparent 68%);
+
+    transform:translateX(-135%);
+
+    transition:transform .75s ease;
+
+}
+
+#book .buy-links a:hover,
+#book .buy-links a:focus-visible{
+
+    color:#fff;
+
+    border-color:#e1f2ff;
+
+    background-color:transparent;
+
+    transform:translateY(-4px) scale(1.02);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.3),
+        0 0 26px rgba(122,183,255,.55),
+        0 12px 28px rgba(0,0,0,.35);
+
+    outline:none;
+
+}
+
+#book .buy-links a:hover::after,
+#book .buy-links a:focus-visible::after{
+
+    transform:translateX(135%);
+
+}
+
+@keyframes cosmicButtonDrift{
+
+    from{ transform:translate3d(-4%, -2%, 0) scale(1.02); }
+
+    to{ transform:translate3d(4%, 3%, 0) scale(1.1); }
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    #book .buy-links a::before{
+
+        animation:none;
+
+    }
+
+}
+
 @media (prefers-reduced-motion:reduce){
 
     .earth .planet::before,
