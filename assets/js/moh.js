@@ -6,7 +6,7 @@ const crack = document.querySelector(".court-crack");
 const universe = document.getElementById("court-universe");
 
 const GAVEL_HIT_TIME = 1.55; // set your real hit second
-const GAVEL_END_TIME = 2.50; // when transition should disappear
+const GAVEL_END_TIME = 3.50; // when transition should disappear
 
 let closeFallbackTimer = null;
 let enteredUniverse = false;
@@ -64,7 +64,7 @@ if (openCourt && transition) {
             }, 900);
         }
 
-        closeFallbackTimer = setTimeout(closeCourtTransition, GAVEL_END_TIME * 1000 + 120);
+        closeFallbackTimer = setTimeout(closeCourtTransition, GAVEL_END_TIME * 1000 + 500);
     });
 }
 
