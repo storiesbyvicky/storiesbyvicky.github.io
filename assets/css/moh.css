@@ -136,7 +136,7 @@ HERO
 #hero{
     background:
         linear-gradient(90deg, rgba(8,8,9,.26), rgba(8,8,9,.06) 48%, rgba(8,8,9,.2)),
-        url("../images/measure-of-harm-courtroom-hero.png") center / cover;
+        url("../images/measure-of-harm-courtroom-hero.webp") center / cover;
 }
 
 #hero h1,
@@ -674,7 +674,7 @@ CASE REFERENCE - AGED LABEL
 .case-card-inner{
     min-height:470px;
     padding:68px 45px 48px;
-    background:url("../images/measure-of-harm-case-file.png") center / 100% 100% no-repeat;
+    background:url("../images/measure-of-harm-case-file.webp") center / 100% 100% no-repeat;
     box-shadow:0 20px 45px rgba(0,0,0,.72), 0 4px 10px rgba(0,0,0,.55);
 }
 

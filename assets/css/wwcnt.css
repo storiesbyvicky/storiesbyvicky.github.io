@@ -410,7 +410,7 @@ p{
 
 .earth .planet::before{
 
-    background-image:url("../images/wwcnt-earth-surface.png");
+    background-image:url("../images/wwcnt-earth-surface.webp");
 
     animation:planetSpin 34s linear infinite;
 
@@ -426,7 +426,7 @@ p{
 
 .other-side .planet::before{
 
-    background-image:url("../images/wwcnt-other-side-surface.png");
+    background-image:url("../images/wwcnt-other-side-surface.webp");
 
     animation:planetSpinReverse 42s linear infinite;
 

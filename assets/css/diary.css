@@ -40,7 +40,7 @@
 .diary-cover, .diary-paper { position: absolute; inset: 0; border-radius: 10px; }
 .diary-cover {
     z-index: 2; overflow: hidden; transform-origin: left center;
-    background: linear-gradient(rgba(17, 10, 6, .08), rgba(17, 10, 6, .08)), url("../images/she-never-forgot-diary-cover.png") center / cover;
+    background: linear-gradient(rgba(17, 10, 6, .08), rgba(17, 10, 6, .08)), url("../images/she-never-forgot-diary-cover.webp") center / cover;
     border: 1px solid rgba(218, 179, 96, .34);
     box-shadow: 0 30px 80px rgba(0, 0, 0, .72), inset 0 0 60px rgba(0, 0, 0, .55);
     transition: transform 1.25s cubic-bezier(.22, 1, .36, 1);
